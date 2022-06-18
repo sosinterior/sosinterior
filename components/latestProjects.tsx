@@ -23,7 +23,6 @@ const useStyles = createStyles(theme => ({
         paddingLeft: 50,
         display: 'flex',
         height: 360,
-        flex: 1,
         '&:before': {
             background: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%)',
             transition: 'all .3s',
@@ -43,6 +42,9 @@ const useStyles = createStyles(theme => ({
             '&:before': {
                 opacity: 0.5,
             },
+        },
+        [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
+            flex: 1,
         },
         [`@media (max-width: ${theme.breakpoints.md}px)`]: {
             height: 260,
