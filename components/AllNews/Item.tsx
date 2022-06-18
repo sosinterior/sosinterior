@@ -14,7 +14,7 @@ const useStyles = createStyles(theme => ({
         width: '100%',
         height: 710,
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-            height: 490,
+            height: 'auto',
         },
     },
     item: {
@@ -23,11 +23,24 @@ const useStyles = createStyles(theme => ({
         width: '100%',
         height: 650,
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+            flexDirection: 'column',
             height: 400,
         },
     },
     itemInner: {
         flex: 1,
+        '&.left': {
+            paddingRight: 15,
+            [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+                paddingRight: 0,
+            },
+        },
+        '&.right': {
+            paddingLeft: 15,
+            [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+                paddingLeft: 0,
+            },
+        },
     },
     image: {
         backgroundColor: '#fff',
@@ -35,7 +48,7 @@ const useStyles = createStyles(theme => ({
             height: '650px !important',
             width: '100%',
             [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-                height: '400px !important',
+                height: '200px !important',
             },
         },
     },
@@ -46,12 +59,6 @@ const useStyles = createStyles(theme => ({
         display: 'flex',
         width: '100%',
         padding: 12,
-        // [`@media (max-width: ${theme.breakpoints.lg}px)`]: {
-        //     width: '60%',
-        // },
-        // [`@media (max-width: ${theme.breakpoints.md}px)`]: {
-        //     width: '80%',
-        // },
     },
     title: {
         color: colors.lightGray,
@@ -150,13 +157,7 @@ const Item: FC<IProps> = ({ title, subTitle, images, itemIndex }) => {
                                     {items.map((image, i) => {
                                         return (
                                             <div key={`${itemIndex}-${index}-${i}`}>
-                                                <Box
-                                                    className={classes.itemInner}
-                                                    sx={{
-                                                        paddingRight: i === 0 ? 15 : 0,
-                                                        paddingLeft: i === 0 ? 0 : 15,
-                                                    }}
-                                                >
+                                                <Box className={`${classes.itemInner} ${i === 0 ? 'left' : 'right'}`}>
                                                     <Image
                                                         data-fancybox={`news-${itemIndex}`}
                                                         className={classes.image}
@@ -165,9 +166,7 @@ const Item: FC<IProps> = ({ title, subTitle, images, itemIndex }) => {
                                                         src={image}
                                                     />
                                                 </Box>
-                                                {items.length === 1 && (
-                                                    <Box className={classes.itemInner} sx={{ paddingLeft: 15 }}></Box>
-                                                )}
+                                                {items.length === 1 && <Box className={`${classes.itemInner} right`} />}
                                             </div>
                                         )
                                     })}
@@ -178,7 +177,7 @@ const Item: FC<IProps> = ({ title, subTitle, images, itemIndex }) => {
                 ) : (
                     images.length !== 0 && (
                         <Box className={classes.item}>
-                            <Box className={classes.itemInner} sx={{ paddingRight: 15 }}>
+                            <Box className={`${classes.itemInner} left`}>
                                 <Image
                                     data-fancybox={`news-${itemIndex}`}
                                     className={classes.image}
@@ -187,7 +186,7 @@ const Item: FC<IProps> = ({ title, subTitle, images, itemIndex }) => {
                                     src={images[0]}
                                 />
                             </Box>
-                            <Box className={classes.itemInner} sx={{ paddingLeft: 15 }}>
+                            <Box className={`${classes.itemInner} right`}>
                                 {images[1] !== undefined && (
                                     <Image
                                         data-fancybox={`news-${itemIndex}`}
