@@ -14,7 +14,7 @@ const useStyles = createStyles(theme => ({
         width: '100%',
         height: 710,
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-            height: 490,
+            height: 'auto',
         },
     },
     item: {
