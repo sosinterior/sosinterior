@@ -22,7 +22,7 @@ const useStyles = createStyles(theme => ({
         width: '100%',
         height: 650,
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-            height: 400,
+            height: 408,
         },
     },
     image: {
@@ -73,6 +73,9 @@ const useStyles = createStyles(theme => ({
         textAlign: 'center',
         fontWeight: 600,
         fontSize: 14,
+        [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+            fontSize: 12,
+        },
     },
     contentValue: {
         color: colors.lightGray,
@@ -80,6 +83,9 @@ const useStyles = createStyles(theme => ({
         textAlign: 'center',
         fontWeight: 300,
         fontSize: 14,
+        [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+            fontSize: 12,
+        },
     },
     arrow: {
         border: `1px solid ${colors.antrazit}`,
