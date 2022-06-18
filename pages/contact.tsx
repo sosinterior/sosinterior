@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-import { Anchor, Box, Container, createStyles, List, Text } from '@mantine/core'
+import { Anchor, Box, Button, Container, createStyles, Input, List, Text, Textarea } from '@mantine/core'
 import { BrandInstagram, Mail, MapPin } from 'tabler-icons-react'
 
 import HeaderArea from '@/components/headerArea'
@@ -9,20 +9,35 @@ import Footer from '@/components/footer'
 import colors from '@/theme/colors'
 import Link from 'next/link'
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles(theme => ({
     container: {
         flexDirection: 'row',
         display: 'flex',
+        [`@media (max-width: ${theme.breakpoints.md}px)`]: {
+            flexDirection: 'column',
+        },
     },
     itemLeft: {
-        flex: 1.7,
+        [`@media (min-width: ${theme.breakpoints.md}px)`]: {
+            flex: 1.7,
+        },
+    },
+    itemLeftInner: {
+        [`@media (min-width: ${theme.breakpoints.md}px)`]: {
+            paddingRight: 100,
+        },
     },
     itemRight: {
         backgroundColor: colors.antrazit,
         position: 'relative',
         padding: '40px 20px',
-        top: '-20px',
-        flex: 1,
+        [`@media (min-width: ${theme.breakpoints.md}px)`]: {
+            top: '-20px',
+            flex: 1,
+        },
+        [`@media (max-width: ${theme.breakpoints.md}px)`]: {
+            marginTop: '20px',
+        },
     },
     title: {
         color: colors.antrazit,
@@ -90,6 +105,29 @@ const Contact: NextPage = () => {
                             <Text className={classes.description}>
                                 Your email address will not be published. Required fields are marked *
                             </Text>
+
+                            <Box className={classes.itemLeftInner}>
+                                <Input
+                                    sx={{ marginTop: 12, color: colors.antrazit }}
+                                    placeholder="Ad Soyad"
+                                    radius="md"
+                                />
+                                <Input placeholder="Email" radius="md" sx={{ marginTop: 12, color: colors.antrazit }} />
+                                <Textarea
+                                    sx={{ marginTop: 12, color: colors.antrazit }}
+                                    placeholder="Mesaj"
+                                    radius="md"
+                                />
+
+                                <Button
+                                    color="dark"
+                                    radius="xl"
+                                    size="md"
+                                    sx={{ marginTop: 12, fontSize: 14, fontWeight: 400 }}
+                                >
+                                    Gönder
+                                </Button>
+                            </Box>
                         </Box>
                         <Box className={classes.itemRight}>
                             <Text className={classes.darkTitle}>Projeleriniz İçin</Text>
