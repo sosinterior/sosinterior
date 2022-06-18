@@ -10,7 +10,7 @@ const AllNews: FC = () => {
             <Item
                 images={['/images/news/marieclaire/4/1.jpeg', '/images/news/marieclaire/4/2.jpg']}
                 title="MARIE CLAIRE MAISON"
-                subTitle="Mayıs Sayı, 2022"
+                subTitle="Mayıs Sayısı, 2022"
                 itemIndex={13}
             />
 
@@ -25,7 +25,7 @@ const AllNews: FC = () => {
                     '/images/news/mekan/3/7.jpg',
                 ]}
                 title="MEKAN"
-                subTitle="Ocak Sayı, 2022"
+                subTitle="Ocak Sayısı, 2022"
                 itemIndex={12}
             />
 
@@ -39,7 +39,7 @@ const AllNews: FC = () => {
                     '/images/news/instylehome/1/6.jpg',
                 ]}
                 title="IN STYLE HOME"
-                subTitle="İlkbahar Sayı, 2021"
+                subTitle="İlkbahar Sayısı, 2021"
                 itemIndex={11}
             />
 
@@ -50,7 +50,7 @@ const AllNews: FC = () => {
                     '/images/news/marieclaire/3/3.jpg',
                 ]}
                 title="MARIE CLAIRE MAISON"
-                subTitle="Nisan Sayı, 2021"
+                subTitle="Nisan Sayısı, 2021"
                 itemIndex={10}
             />
 
@@ -63,7 +63,7 @@ const AllNews: FC = () => {
                     '/images/news/mekan/2/5.jpg',
                 ]}
                 title="MEKAN"
-                subTitle="Mart Sayı, 2021"
+                subTitle="Mart Sayısı, 2021"
                 itemIndex={8}
             />
 
@@ -75,7 +75,7 @@ const AllNews: FC = () => {
                     '/images/news/mekan/1/4.jpg',
                 ]}
                 title="MEKAN"
-                subTitle="Kasım Sayı, 2019"
+                subTitle="Kasım Sayısı, 2019"
                 itemIndex={7}
             />
 
@@ -88,7 +88,7 @@ const AllNews: FC = () => {
                     '/images/news/marieclaire/2/5.jpg',
                 ]}
                 title="MARIE CLAIRE MAISON"
-                subTitle="Eylül Sayı, 2019"
+                subTitle="Eylül Sayısı, 2019"
                 itemIndex={6}
             />
 
@@ -100,7 +100,7 @@ const AllNews: FC = () => {
                     '/images/news/homeart/1/4.jpg',
                 ]}
                 title="HOME ART"
-                subTitle="300. Sayı, 2018"
+                subTitle="300. Sayısı, 2018"
                 itemIndex={5}
             />
 
