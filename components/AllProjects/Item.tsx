@@ -13,6 +13,9 @@ const useStyles = createStyles(theme => ({
         marginTop: 40,
         width: '100%',
         height: 710,
+        [`@media (max-width: ${theme.breakpoints.md}px)`]: {
+            height: 510,
+        },
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
             height: 'auto',
         },
@@ -21,8 +24,11 @@ const useStyles = createStyles(theme => ({
         cursor: 'pointer',
         width: '100%',
         height: 650,
+        [`@media (max-width: ${theme.breakpoints.md}px)`]: {
+            maxHeight: 450,
+        },
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-            height: 408,
+            maxHeight: 300,
         },
     },
     image: {
@@ -31,7 +37,7 @@ const useStyles = createStyles(theme => ({
             height: '650px !important',
             width: '100%',
             [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-                height: '400px !important',
+                maxHeight: '292px !important',
             },
         },
     },
