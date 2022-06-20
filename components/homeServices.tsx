@@ -38,15 +38,15 @@ const HomeServices = () => {
     const { classes } = useStyles()
 
     return (
-        <Container size="md">
+        <Container size="xl">
             <Center>
                 <Text className={classes.title}>What Can We Offer</Text>
             </Center>
 
-            <Grid className={classes.items} columns={2}>
+            <Grid className={classes.items} columns={3}>
                 <Grid.Col className={classes.item} span={1}>
                     <View360 size={50} strokeWidth={1} />
-                    <Text className={classes.titles}>Customer Focus</Text>
+                    <Text className={classes.titles}>SOSInteriod Kids</Text>
                     <Text className={classes.contents}>
                         We develop an attractive and convenient space for work and leisure time, working on units,
                         selecting materials, manufacturers.
@@ -55,7 +55,7 @@ const HomeServices = () => {
 
                 <Grid.Col className={classes.item} span={1}>
                     <Ruler size={50} strokeWidth={1} />
-                    <Text className={classes.titles}>Professionalism</Text>
+                    <Text className={classes.titles}>SOSInteriod Detox</Text>
                     <Text className={classes.contents}>
                         We develop an attractive and convenient space for work and leisure time, working on units,
                         selecting materials, manufacturers.
@@ -64,16 +64,7 @@ const HomeServices = () => {
 
                 <Grid.Col className={classes.item} span={1}>
                     <Home2 size={50} strokeWidth={1} />
-                    <Text className={classes.titles}>Multi Experience</Text>
-                    <Text className={classes.contents}>
-                        We develop an attractive and convenient space for work and leisure time, working on units,
-                        selecting materials, manufacturers.
-                    </Text>
-                </Grid.Col>
-
-                <Grid.Col className={classes.item} span={1}>
-                    <Resize size={50} strokeWidth={1} />
-                    <Text className={classes.titles}>Author`s Supervision</Text>
+                    <Text className={classes.titles}>SOSInterior Projects</Text>
                     <Text className={classes.contents}>
                         We develop an attractive and convenient space for work and leisure time, working on units,
                         selecting materials, manufacturers.
