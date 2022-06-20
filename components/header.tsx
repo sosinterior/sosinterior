@@ -23,7 +23,9 @@ const useStyles = createStyles(theme => ({
             padding: 0,
         },
         '&.noBorder': {
-            border: 'none !important',
+            [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+                border: 'none !important',
+            },
         },
     },
     link: {
