@@ -26,10 +26,20 @@ const useStyles = createStyles(theme => ({
         maxWidth: '100%',
         height: 400,
         width: 400,
+        [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+            height: 300,
+            width: 300,
+        },
         img: {
             height: '400px !important',
             width: '400px !important',
             borderRadius: '200px',
+            margin: '0 auto',
+            [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+                height: '300px !important',
+                width: '300px !important',
+                maxWidth: '100%',
+            },
         },
     },
     title: {
