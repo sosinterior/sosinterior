@@ -60,16 +60,6 @@ const useStyles = createStyles(theme => ({
         marginLeft: 20,
         fontSize: 32,
     },
-    darkDescription: {
-        color: colors.lightGray,
-        letterSpacing: '1px',
-        marginBottom: 24,
-        fontWeight: 400,
-        marginRight: 20,
-        marginLeft: 20,
-        marginTop: 12,
-        fontSize: 13,
-    },
     list: {
         marginRight: 20,
         marginLeft: 20,
@@ -131,10 +121,6 @@ const Contact: NextPage = () => {
                         </Box>
                         <Box className={classes.itemRight}>
                             <Text className={classes.darkTitle}>Projeleriniz İçin</Text>
-                            <Text className={classes.darkDescription}>
-                                Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours
-                                on business days. We will be happy to answer your questions.
-                            </Text>
 
                             <List size="sm" listStyleType="none" className={classes.list}>
                                 <List.Item>
