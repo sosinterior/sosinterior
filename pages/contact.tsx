@@ -150,8 +150,18 @@ const Contact: NextPage = () => {
                             </List>
 
                             <Link passHref href="#">
-                                <Anchor sx={{ marginLeft: 20, marginTop: 20, display: 'inline-block' }}>
-                                    <BrandInstagram size={30} strokeWidth={1} color="#fff" />
+                                <Anchor
+                                    sx={{
+                                        textDecoration: 'none !important',
+                                        alignItems: 'center',
+                                        display: 'flex',
+                                        marginLeft: 20,
+                                        marginTop: 20,
+                                        color: '#fff',
+                                    }}
+                                >
+                                    <BrandInstagram size={30} strokeWidth={2} color="#fff" />
+                                    <Text sx={{ marginLeft: 5 }}>/sosinterior</Text>
                                 </Anchor>
                             </Link>
                         </Box>
