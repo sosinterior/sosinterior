@@ -28,7 +28,7 @@ const useStyles = createStyles(theme => ({
             maxHeight: 450,
         },
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-            maxHeight: 300,
+            maxHeight: 200,
         },
     },
     image: {
@@ -37,7 +37,7 @@ const useStyles = createStyles(theme => ({
             height: '650px !important',
             width: '100%',
             [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-                maxHeight: '292px !important',
+                maxHeight: '192px !important',
             },
         },
     },
