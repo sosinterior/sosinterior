@@ -12,7 +12,7 @@ import Footer from '@/components/footer'
 const Home: NextPage = () => {
     return (
         <>
-            <Header />
+            <Header isBorder={true} />
             <main>
                 <HomeSlider />
                 <HomeSliderBottom />

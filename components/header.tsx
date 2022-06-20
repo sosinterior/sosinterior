@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useState } from 'react'
+import { FC, useCallback, useEffect, useState } from 'react'
 
 import { Anchor, Burger, Container, createStyles, Group, Image } from '@mantine/core'
-import { NextComponentType } from 'next'
 import { useRouter } from 'next/router'
 import colors from '@/theme/colors'
 import Link from 'next/link'
@@ -22,6 +21,9 @@ const useStyles = createStyles(theme => ({
         },
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
             padding: 0,
+        },
+        '&.noBorder': {
+            border: 'none !important',
         },
     },
     link: {
@@ -150,7 +152,7 @@ const useStyles = createStyles(theme => ({
     },
 }))
 
-const Header: NextComponentType = () => {
+const Header: FC<{ isBorder?: boolean }> = ({ isBorder = false }) => {
     const [isOpened, setIsOpened] = useState(false)
     const [isDarkBg, setIsDarkBg] = useState(false)
     // Hooks
@@ -172,7 +174,14 @@ const Header: NextComponentType = () => {
 
     return (
         <header>
-            <Container fluid className={isDarkBg ? `${classes.container} dark` : classes.container}>
+            <Container
+                fluid
+                className={
+                    isDarkBg
+                        ? `${classes.container} ${isBorder ? 'dark' : 'dark noBorder'}`
+                        : `${isBorder ? classes.container : classes.container + ' noBorder'}`
+                }
+            >
                 <Burger
                     onClick={() => setIsOpened(o => !o)}
                     className={classes.hamburger}
