@@ -23,8 +23,7 @@ const useStyles = createStyles(theme => ({
         width: '100%',
         height: 650,
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-            flexDirection: 'column',
-            height: 400,
+            height: 'auto',
         },
     },
     itemInner: {
@@ -32,13 +31,13 @@ const useStyles = createStyles(theme => ({
         '&.left': {
             paddingRight: 15,
             [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-                paddingRight: 0,
+                paddingRight: 3,
             },
         },
         '&.right': {
             paddingLeft: 15,
             [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-                paddingLeft: 0,
+                paddingLeft: 3,
             },
         },
     },
@@ -48,7 +47,7 @@ const useStyles = createStyles(theme => ({
             height: '650px !important',
             width: '100%',
             [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-                height: '200px !important',
+                height: '250px !important',
             },
         },
     },
