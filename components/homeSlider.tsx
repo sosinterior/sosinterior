@@ -70,9 +70,21 @@ const useStyles = createStyles(theme => ({
 const HomeSlider = () => {
     const [activeSlider, setActiveSlider] = useState(0)
     const [images] = useState([
-        'http://www.sosinterior.com/demos/project/istanbul/boulevard/1.jpg',
-        'http://www.sosinterior.com/demos/project/2-0.jpg',
-        'http://www.sosinterior.com/demos/project/istanbul/kartal/1.jpg',
+        {
+            image: 'http://www.sosinterior.com/demos/project/istanbul/boulevard/1.jpg',
+            title: 'İç Mekan',
+            content: 'İç mekânları arındırmanın en pratik, hızlı, zahmetsiz ve eğlenceli biçimi!',
+        },
+        {
+            image: 'http://www.sosinterior.com/demos/project/2-0.jpg',
+            title: 'Hızlı Çözüm',
+            content: 'İç mekânlar sadece birkaç günde arınıyor ve yenileniyor.',
+        },
+        {
+            image: 'http://www.sosinterior.com/demos/project/istanbul/kartal/1.jpg',
+            title: 'Pratik Uygulama',
+            content: 'Bedenimizin ve zihnimizin olduğu kadar iç mekânların da arınmaya ihtiyacı var.',
+        },
     ])
     // Hooks
     const { classes } = useStyles()
@@ -109,11 +121,11 @@ const HomeSlider = () => {
 
     return (
         <Box sx={{ height: '100vh', minHeight: 600, position: 'relative' }}>
-            {images.map((image, index) => {
+            {images.map((item, index) => {
                 return (
                     <motion.div
                         animate={{ opacity: activeSlider === index ? 1 : 0, zIndex: activeSlider === index ? 1 : -1 }}
-                        style={{ backgroundImage: `url(${image})` }}
+                        style={{ backgroundImage: `url(${item.image})` }}
                         className={classes.sliderImage}
                         key={index}
                     >
@@ -128,9 +140,9 @@ const HomeSlider = () => {
                                         key={activeSlider}
                                     >
                                         <Text component="h1" className={classes.sliderTitle}>
-                                            Best Furniture and Decor
+                                            {item.title}
                                             <Text component="span" className={classes.sliderTitleBack}>
-                                                Best Furniture and Decor
+                                                {item.title}
                                             </Text>
                                         </Text>
                                     </motion.div>
@@ -145,9 +157,7 @@ const HomeSlider = () => {
                                         transition={{ delay: 0.7 }}
                                     >
                                         <Text component="p" className={classes.sliderText}>
-                                            We pride ourselves on being builders — creating architectural and creative
-                                            solutions to help people realize their vision and make them a reality. Wanna
-                                            work with us?
+                                            {item.content}
                                         </Text>
                                     </motion.div>
                                 </AnimatePresence>
@@ -161,12 +171,14 @@ const HomeSlider = () => {
                                             transition={{ delay: 0.9 }}
                                         >
                                             <Button
+                                                component="a"
+                                                href="/projects"
                                                 color="dark"
                                                 radius="xl"
                                                 size="lg"
                                                 sx={{ fontSize: 14, fontWeight: 400 }}
                                             >
-                                                View Projects
+                                                Projeleri Gör
                                             </Button>
                                         </motion.div>
                                     </AnimatePresence>

@@ -79,17 +79,27 @@ const Footer = () => {
                                 </Anchor>
                             </Link>
                             <Text className={classes.description}>
-                                We provides a full range of interior design, architectural design.
+                                Mekân ve insan psikolojisi arasındaki ilişkiyi konut projelerinde deneysel bir biçimde
+                                ele almayı seviyoruz.
                             </Text>
                             <Link passHref href="#">
-                                <Anchor>
-                                    <BrandInstagram size={30} strokeWidth={1} color="#fff" />
+                                <Anchor
+                                    sx={{
+                                        textDecoration: 'none !important',
+                                        alignItems: 'center',
+                                        display: 'flex',
+                                        marginTop: 20,
+                                        color: '#fff',
+                                    }}
+                                >
+                                    <BrandInstagram size={30} strokeWidth={2} color="#fff" />
+                                    <Text sx={{ marginLeft: 5 }}>/sosinterior</Text>
                                 </Anchor>
                             </Link>
                         </Grid.Col>
 
                         <Grid.Col className={classes.gridItem} span={1}>
-                            <Text className={classes.title}>Contacts</Text>
+                            <Text className={classes.title}>İletişim</Text>
                             <List size="sm" listStyleType="none">
                                 <List.Item>
                                     <Text className={classes.contactItem}>
@@ -111,7 +121,7 @@ const Footer = () => {
                         </Grid.Col>
 
                         <Grid.Col className={classes.gridItem} span={1}>
-                            <Text className={classes.title}>Latest Projects</Text>
+                            <Text className={classes.title}>Son Projeler</Text>
                             <List size="sm" listStyleType="none">
                                 <List.Item>
                                     <Link passHref href="/">

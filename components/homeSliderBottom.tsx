@@ -56,8 +56,8 @@ const HomeSliderBottom = () => {
             <Container size="xl">
                 <Box className={classes.body}>
                     <Text className={classes.title}>
-                        “Even if you don’t have a ready sketch of what you want – we will help you to get the result you
-                        dreamed of.”
+                        Mekân ve insan psikolojisi arasındaki ilişkiyi konut projelerinde deneysel bir biçimde ele
+                        almayı seviyoruz.”
                     </Text>
                     <Box className={classes.content}>
                         <Image
@@ -66,8 +66,8 @@ const HomeSliderBottom = () => {
                             src="http://www.sosinterior.com/images/portre.jpg"
                         />
                         <Box sx={{ marginLeft: 12 }}>
-                            <Text sx={{ fontSize: 18, color: '#fff' }}>David Oswald</Text>
-                            <Text sx={{ fontSize: 14, color: '#fff', fontWeight: 200 }}>FOUNDER OF COMPANY</Text>
+                            <Text sx={{ fontSize: 18, color: '#fff' }}>Serra Özbay</Text>
+                            <Text sx={{ fontSize: 14, color: '#fff', fontWeight: 200 }}>Kurucu İçmimar</Text>
                         </Box>
                     </Box>
                 </Box>

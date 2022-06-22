@@ -45,14 +45,6 @@ const useStyles = createStyles(theme => ({
         marginTop: 32,
         fontSize: 32,
     },
-    description: {
-        lineHeight: '28px',
-        color: '#555555',
-        marginBottom: 24,
-        fontWeight: 400,
-        marginTop: 12,
-        fontSize: 15,
-    },
     darkTitle: {
         color: colors.lightGray,
         fontWeight: 450,
@@ -92,9 +84,6 @@ const Contact: NextPage = () => {
                     <Box className={classes.container}>
                         <Box className={classes.itemLeft}>
                             <Text className={classes.title}>İletişim</Text>
-                            <Text className={classes.description}>
-                                Your email address will not be published. Required fields are marked *
-                            </Text>
 
                             <Box className={classes.itemLeftInner}>
                                 <Input

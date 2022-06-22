@@ -40,34 +40,37 @@ const HomeServices = () => {
     return (
         <Container size="xl">
             <Center>
-                <Text className={classes.title}>What Can We Offer</Text>
+                <Text className={classes.title}>Neler Yaparız</Text>
             </Center>
 
             <Grid className={classes.items} columns={3}>
                 <Grid.Col className={classes.item} span={1}>
                     <View360 size={50} strokeWidth={1} />
-                    <Text className={classes.titles}>SOSInteriod Kids</Text>
+                    <Text className={classes.titles}>SOS Interior Detox</Text>
                     <Text className={classes.contents}>
-                        We develop an attractive and convenient space for work and leisure time, working on units,
-                        selecting materials, manufacturers.
+                        SOS interior detox ile projelerin en kısa sürede teslim edilmesini hedefliyoruz. Mekânı ve mekân
+                        sahibini tanıdıktan hemen sonra birkaç günlük çalışma ile iç mekânlar tamamen arınmış, yepyeni
+                        bir görünüme ulaşıyor. İç mekânlar temizlenmiş ve yaşamaya hazır şekilde teslim ediliyor.
                     </Text>
                 </Grid.Col>
 
                 <Grid.Col className={classes.item} span={1}>
                     <Ruler size={50} strokeWidth={1} />
-                    <Text className={classes.titles}>SOSInteriod Detox</Text>
+                    <Text className={classes.titles}>SOS Interior Projects</Text>
                     <Text className={classes.contents}>
-                        We develop an attractive and convenient space for work and leisure time, working on units,
-                        selecting materials, manufacturers.
+                        İç mekânları arındırmak, rahatlatmak, mekân sahipleri ve iç mekân arasındaki ilişkiyi
+                        kuvvetlendirmeyi hedefleyerek yola çıktığımız projelerde kullanıcıları iyi analiz ederek, beğeni
+                        ve ihtiyaçlarını kendi çizgimizde yorumlamayı ve ince detaylara kafa yormayı çok seviyoruz.
                     </Text>
                 </Grid.Col>
 
                 <Grid.Col className={classes.item} span={1}>
                     <Home2 size={50} strokeWidth={1} />
-                    <Text className={classes.titles}>SOSInterior Projects</Text>
+                    <Text className={classes.titles}>SOS Interior Kids</Text>
                     <Text className={classes.contents}>
-                        We develop an attractive and convenient space for work and leisure time, working on units,
-                        selecting materials, manufacturers.
+                        Konut projeleri ile başlayan tasarım yolculuğumuz çocuk odaları ile daha keyifli bir hâl alıyor.
+                        Özgün ve bir o kadar eğlenceli iç mekanlarda yaratıcılığı ve eğlenceyi ön plana çıkarırken küçük
+                        kullanıcılarımıza sınırsız ve özgür hissedebilecekleri yaşam alanları sunuyoruz.
                     </Text>
                 </Grid.Col>
             </Grid>

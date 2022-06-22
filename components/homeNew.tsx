@@ -74,15 +74,23 @@ const HomeNew = () => {
                 />
             </Box>
             <Box className={classes.item}>
-                <Text className={classes.title}>From Sketch to Life</Text>
+                <Text className={classes.title}>Haberler</Text>
                 <Text className={classes.content}>
-                    The basic philosophy of our studio is to create individual, aesthetically stunning solutions for our
-                    customers by lightning-fast development of projects employing unique styles and architecture. Even
-                    if you don’t have a ready sketch of what you want – we will help you to get the result you dreamed
-                    of.
+                    Yapmış olduğu projelerde kullanıcıyı iyi analiz eden, beğeni ve ihtiyaçlarını kendi çizgisi ile
+                    birleştiren detaycı bir yapıya sahip olan Serra Özbay, mekân ve insan psikolojisi arasındaki
+                    ilişkiyi deneysel bir şekilde ele alan konut projeleriyle dikkat çekiyor. Bu evin tasarımında da
+                    benzer bir motivasyonla yola çıkan iç mimar, öncelikli olarak görüntüden ziyade ev sahiplerinin
+                    yaşam dengeleri ve pratiklerini analiz etmiş.
                 </Text>
-                <Button color="dark" radius="xl" size="lg" sx={{ fontSize: 14, fontWeight: 400 }}>
-                    View Projects
+                <Button
+                    component="a"
+                    href="/news"
+                    color="dark"
+                    radius="xl"
+                    size="lg"
+                    sx={{ fontSize: 14, fontWeight: 400 }}
+                >
+                    Haberleri İncele
                 </Button>
             </Box>
         </Container>
