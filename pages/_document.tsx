@@ -1,6 +1,5 @@
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyles, createStylesServer } from '@mantine/next'
-import Script from 'next/script'
 
 const stylesServer = createStylesServer()
 
@@ -13,7 +12,7 @@ const _document = () => {
             <body>
                 <Main />
                 <NextScript />
-                <Script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" />
+                <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" async />
             </body>
         </Html>
     )
