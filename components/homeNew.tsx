@@ -21,6 +21,10 @@ const useStyles = createStyles(theme => ({
         justifyContent: 'flex-end',
         marginRight: 24,
         display: 'flex',
+        [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+            marginRight: 0,
+            marginBottom: 24,
+        },
     },
     image: {
         maxWidth: '100%',
@@ -74,14 +78,7 @@ const HomeNew = () => {
                 />
             </Box>
             <Box className={classes.item}>
-                <Text className={classes.title}>Haberler</Text>
-                <Text className={classes.content}>
-                    Yapmış olduğu projelerde kullanıcıyı iyi analiz eden, beğeni ve ihtiyaçlarını kendi çizgisi ile
-                    birleştiren detaycı bir yapıya sahip olan Serra Özbay, mekân ve insan psikolojisi arasındaki
-                    ilişkiyi deneysel bir şekilde ele alan konut projeleriyle dikkat çekiyor. Bu evin tasarımında da
-                    benzer bir motivasyonla yola çıkan iç mimar, öncelikli olarak görüntüden ziyade ev sahiplerinin
-                    yaşam dengeleri ve pratiklerini analiz etmiş.
-                </Text>
+                {/* <Text className={classes.title}>Haberler</Text> */}
                 <Button
                     component="a"
                     href="/news"
