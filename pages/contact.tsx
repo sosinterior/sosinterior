@@ -45,13 +45,6 @@ const useStyles = createStyles(theme => ({
         marginTop: 32,
         fontSize: 32,
     },
-    darkTitle: {
-        color: colors.lightGray,
-        fontWeight: 450,
-        marginRight: 20,
-        marginLeft: 20,
-        fontSize: 32,
-    },
     list: {
         marginRight: 20,
         marginLeft: 20,
@@ -109,8 +102,6 @@ const Contact: NextPage = () => {
                             </Box>
                         </Box>
                         <Box className={classes.itemRight}>
-                            <Text className={classes.darkTitle}>Projeleriniz İçin</Text>
-
                             <List size="sm" listStyleType="none" className={classes.list}>
                                 <List.Item>
                                     <Text className={classes.contactItem}>
