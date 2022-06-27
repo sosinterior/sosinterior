@@ -194,7 +194,7 @@ const Header: FC<{ isBorder?: boolean }> = ({ isBorder = false }) => {
                 />
                 <Link href="/" passHref>
                     <Anchor className={classes.logoWrapper}>
-                        <Image alt="SOS Interior" className={classes.logo} src="/images/logo.png" />
+                        <Image alt="SOS Interior" width="50px" className={classes.logo} src="/images/logo.png" />
                     </Anchor>
                 </Link>
                 <Group className={isOpened ? `${classes.links} active` : classes.links} position="center">
