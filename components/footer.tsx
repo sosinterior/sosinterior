@@ -17,13 +17,6 @@ const useStyles = createStyles(theme => ({
         filter: 'brightness(0) invert(1)',
         width: 60,
     },
-    description: {
-        marginBottom: 12,
-        fontWeight: 400,
-        marginTop: 24,
-        color: '#fff',
-        fontSize: 14,
-    },
     title: {
         fontWeight: 600,
         color: '#fff',
@@ -78,24 +71,6 @@ const Footer = () => {
                                     <Image alt="SOS Interior" className={classes.logo} src="/images/logo.png" />
                                 </Anchor>
                             </Link>
-                            <Text className={classes.description}>
-                                Mekân ve insan psikolojisi arasındaki ilişkiyi konut projelerinde deneysel bir biçimde
-                                ele almayı seviyoruz.
-                            </Text>
-                            <Link passHref href="#">
-                                <Anchor
-                                    sx={{
-                                        textDecoration: 'none !important',
-                                        alignItems: 'center',
-                                        display: 'flex',
-                                        marginTop: 20,
-                                        color: '#fff',
-                                    }}
-                                >
-                                    <BrandInstagram size={30} strokeWidth={2} color="#fff" />
-                                    <Text sx={{ marginLeft: 5 }}>/sosinterior</Text>
-                                </Anchor>
-                            </Link>
                         </Grid.Col>
 
                         <Grid.Col className={classes.gridItem} span={1}>
@@ -116,6 +91,23 @@ const Footer = () => {
                                         </Text>
                                         info@sosinterior.com
                                     </Text>
+                                </List.Item>
+                                <List.Item>
+                                    <Link passHref href="https://www.instagram.com/sosinterior">
+                                        <Anchor
+                                            target="_blank"
+                                            sx={{
+                                                textDecoration: 'none !important',
+                                                alignItems: 'center',
+                                                display: 'flex',
+                                                marginTop: 20,
+                                                color: '#fff',
+                                            }}
+                                        >
+                                            <BrandInstagram />
+                                            <Text sx={{ marginLeft: 5 }}>/sosinterior</Text>
+                                        </Anchor>
+                                    </Link>
                                 </List.Item>
                             </List>
                         </Grid.Col>
