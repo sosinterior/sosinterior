@@ -11,6 +11,7 @@ import Link from 'next/link'
 const useStyles = createStyles(theme => ({
     title: {
         color: colors.antrazit,
+        textAlign: 'center',
         fontWeight: 600,
         fontSize: 24,
     },
