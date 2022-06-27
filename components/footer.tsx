@@ -68,7 +68,12 @@ const Footer = () => {
                         <Grid.Col className={classes.gridItem} span={1}>
                             <Link href="/" passHref>
                                 <Anchor sx={{ display: 'inline-block' }}>
-                                    <Image alt="SOS Interior" className={classes.logo} src="/images/logo.png" />
+                                    <Image
+                                        className={classes.logo}
+                                        src="/images/logo.png"
+                                        alt="SOS Interior"
+                                        width="60px"
+                                    />
                                 </Anchor>
                             </Link>
                         </Grid.Col>
