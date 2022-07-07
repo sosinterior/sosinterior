@@ -71,19 +71,14 @@ const HomeSlider = () => {
     const [activeSlider, setActiveSlider] = useState(0)
     const [images] = useState([
         {
-            image: 'http://www.sosinterior.com/demos/project/istanbul/boulevard/1.jpg',
+            image: '/images/slider/1.jpg',
             title: 'İç Mekan',
             content: 'İç mekânları arındırmanın en pratik, hızlı, zahmetsiz ve eğlenceli biçimi!',
         },
         {
-            image: 'http://www.sosinterior.com/demos/project/2-0.jpg',
+            image: '/images/slider/2.jpg',
             title: 'Hızlı Çözüm',
             content: 'İç mekânlar sadece birkaç günde arınıyor ve yenileniyor.',
-        },
-        {
-            image: 'http://www.sosinterior.com/demos/project/istanbul/kartal/1.jpg',
-            title: 'Pratik Uygulama',
-            content: 'Bedenimizin ve zihnimizin olduğu kadar iç mekânların da arınmaya ihtiyacı var.',
         },
     ])
     // Hooks

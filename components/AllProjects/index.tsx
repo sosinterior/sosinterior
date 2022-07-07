@@ -8,6 +8,48 @@ const AllProjects: FC = () => {
     return (
         <Container size="xl" sx={{ marginTop: 100 }}>
             <Item
+                itemIndex={30}
+                data={{
+                    location: 'Dalyan, Mu[la',
+                    name: 'Ç.E Evi',
+                    size: '320',
+                    year: '2022',
+                }}
+                images={[
+                    '/images/projects/31/1.jpg',
+                    '/images/projects/31/2.jpg',
+                    '/images/projects/31/3.jpg',
+                    '/images/projects/31/4.jpg',
+                    '/images/projects/31/5.jpg',
+                    '/images/projects/31/6.jpg',
+                    '/images/projects/31/7.jpg',
+                    '/images/projects/31/8.jpg',
+                    '/images/projects/31/9.jpg',
+                    '/images/projects/31/10.jpg',
+                    '/images/projects/31/12.jpg',
+                    '/images/projects/31/13.jpg',
+                    '/images/projects/31/14.jpg',
+                    '/images/projects/31/15.jpg',
+                    '/images/projects/31/16.jpg',
+                    '/images/projects/31/17.jpg',
+                    '/images/projects/31/18.jpg',
+                    '/images/projects/31/19.jpg',
+                    '/images/projects/31/20.jpg',
+                    '/images/projects/31/21.jpg',
+                    '/images/projects/31/22.jpg',
+                    '/images/projects/31/23.jpg',
+                    '/images/projects/31/24.jpg',
+                    '/images/projects/31/25.jpg',
+                    '/images/projects/31/26.jpg',
+                    '/images/projects/31/27.jpg',
+                    '/images/projects/31/28.jpg',
+                    '/images/projects/31/29.jpg',
+                    '/images/projects/31/30.jpg',
+                    '/images/projects/31/31.jpg',
+                ]}
+            />
+
+            <Item
                 itemIndex={0}
                 data={{
                     location: 'Atılgan Royal, İzmir',

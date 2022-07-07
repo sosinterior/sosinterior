@@ -102,20 +102,20 @@ const LatestProjects = () => {
     return (
         <>
             <Container fluid className={classes.container}>
-                <Anchor className={classes.item} href="#">
+                <Anchor className={classes.item} href="/projects">
+                    <Image className={classes.image} src="/images/projects/31/1.jpg" alt="Ç.E Evi" />
+                    <Text className={classes.title}>Ç.E Evi</Text>
+                    <Text className={classes.location}>Dalyan, Muğla</Text>
+                </Anchor>
+                <Anchor className={classes.item} href="/projects">
                     <Image className={classes.image} src="/images/projects/1/1.jpg" alt="Z.A Evi" />
                     <Text className={classes.title}>Z.A Evi</Text>
                     <Text className={classes.location}>Atılgan Royal, İzmir</Text>
                 </Anchor>
-                <Anchor className={classes.item} href="#">
+                <Anchor className={classes.item} href="/projects">
                     <Image className={classes.image} src="/images/projects/2/1.jpg" alt="B.F Evi" />
                     <Text className={classes.title}>B.F Evi</Text>
                     <Text className={classes.location}>Emirgan, İstanbul</Text>
-                </Anchor>
-                <Anchor className={classes.item} href="#">
-                    <Image className={classes.image} src="/images/projects/3/1.jpg" alt="Ö.S Evi" />
-                    <Text className={classes.title}>Ö.S Evi</Text>
-                    <Text className={classes.location}>Koşuyolu, İstanbul</Text>
                 </Anchor>
             </Container>
             <Anchor className={classes.more} href="/projects">

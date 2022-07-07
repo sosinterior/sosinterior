@@ -1,4 +1,4 @@
-import { Center, Container, createStyles, Grid, Text } from '@mantine/core'
+import { Center, Container, createStyles, Grid, Image, Text } from '@mantine/core'
 import { Home2, View360, Ruler } from 'tabler-icons-react'
 
 import colors from '@/theme/colors'
@@ -45,7 +45,17 @@ const HomeServices = () => {
 
             <Grid className={classes.items} columns={3}>
                 <Grid.Col className={classes.item} span={1}>
-                    <View360 size={50} strokeWidth={1} />
+                    <Image width={60} src="/images/services-icon.jpg" />
+                    <Text className={classes.titles}>SOS Interior Evleri</Text>
+                    <Text className={classes.contents}>
+                        İç mekânları arındırmak, rahatlatmak, mekân sahipleri ve iç mekân arasındaki ilişkiyi
+                        kuvvetlendirmeyi hedefleyerek yola çıktığımız projelerde kullanıcıları iyi analiz ederek, beğeni
+                        ve ihtiyaçlarını kendi çizgimizde yorumlamayı ve ince detaylara kafa yormayı çok seviyoruz.
+                    </Text>
+                </Grid.Col>
+
+                <Grid.Col className={classes.item} span={1}>
+                    <Image width={60} src="/images/services-icon.jpg" />
                     <Text className={classes.titles}>SOS Interior Detox</Text>
                     <Text className={classes.contents}>
                         SOS interior detox ile projelerin en kısa sürede teslim edilmesini hedefliyoruz. Mekânı ve mekân
@@ -55,17 +65,7 @@ const HomeServices = () => {
                 </Grid.Col>
 
                 <Grid.Col className={classes.item} span={1}>
-                    <Ruler size={50} strokeWidth={1} />
-                    <Text className={classes.titles}>SOS Interior Projects</Text>
-                    <Text className={classes.contents}>
-                        İç mekânları arındırmak, rahatlatmak, mekân sahipleri ve iç mekân arasındaki ilişkiyi
-                        kuvvetlendirmeyi hedefleyerek yola çıktığımız projelerde kullanıcıları iyi analiz ederek, beğeni
-                        ve ihtiyaçlarını kendi çizgimizde yorumlamayı ve ince detaylara kafa yormayı çok seviyoruz.
-                    </Text>
-                </Grid.Col>
-
-                <Grid.Col className={classes.item} span={1}>
-                    <Home2 size={50} strokeWidth={1} />
+                    <Image width={60} src="/images/services-icon.jpg" />
                     <Text className={classes.titles}>SOS Interior Kids</Text>
                     <Text className={classes.contents}>
                         Konut projeleri ile başlayan tasarım yolculuğumuz çocuk odaları ile daha keyifli bir hâl alıyor.

@@ -70,7 +70,8 @@ const Contact: NextPage = () => {
             <Header />
             <main>
                 <HeaderArea
-                    imageUrl="https://img.freepik.com/free-photo/living-room-interior-wall-warm-tones-gray-armchair-with-wood-cabinet-3d-rendering_41470-3656.jpg?w=2000"
+                    backgroundPosition="center bottom -340px"
+                    imageUrl="/images/headers/contact.jpg"
                     title="İletişim"
                 />
                 <Container size="xl">
@@ -129,8 +130,9 @@ const Contact: NextPage = () => {
                                 </List.Item>
                             </List>
 
-                            <Link passHref href="#">
+                            <Link passHref href="https://www.instagram.com/sosinterior">
                                 <Anchor
+                                    target="_blank"
                                     sx={{
                                         textDecoration: 'none !important',
                                         alignItems: 'center',
@@ -141,7 +143,7 @@ const Contact: NextPage = () => {
                                     }}
                                 >
                                     <BrandInstagram size={30} strokeWidth={2} color="#fff" />
-                                    <Text sx={{ marginLeft: 5 }}>/sosinterior</Text>
+                                    <Text sx={{ marginLeft: 5 }}>sosinterior</Text>
                                 </Anchor>
                             </Link>
                         </Box>

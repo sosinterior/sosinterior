@@ -40,16 +40,17 @@ const useStyles = createStyles(theme => ({
 }))
 
 interface IProps {
+    backgroundPosition?: string
     imageUrl: string
     title: string
 }
 
-const HeaderArea: FC<IProps> = ({ imageUrl, title }) => {
+const HeaderArea: FC<IProps> = ({ imageUrl, title, backgroundPosition = 'center' }) => {
     // Hooks
     const { classes } = useStyles()
 
     return (
-        <Box sx={{ backgroundImage: `url(${imageUrl})` }} className={classes.container}>
+        <Box sx={{ backgroundPosition, backgroundImage: `url(${imageUrl})` }} className={classes.container}>
             <Text component="h1" className={classes.title}>
                 {title}
             </Text>

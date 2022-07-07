@@ -12,7 +12,11 @@ const News: NextPage = () => {
         <>
             <Header />
             <main>
-                <HeaderArea title="Haberler" imageUrl="http://www.sosinterior.com/demos/blog/instyle/2.jpg" />
+                <HeaderArea
+                    title="Haberler"
+                    backgroundPosition="center bottom -200px"
+                    imageUrl="/images/headers/news.jpg"
+                />
                 <AllNews />
             </main>
             <Footer />

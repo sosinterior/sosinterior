@@ -167,7 +167,7 @@ const About: NextPage = () => {
         <>
             <Header />
             <main>
-                <HeaderArea title="Hakkımızda" imageUrl="http://www.sosinterior.com/demos/project/2-4.jpg" />
+                <HeaderArea title="Hakkımızda" imageUrl="/images/headers/about.jpg" />
 
                 <Box sx={{ marginTop: 100 }}>
                     <Container size="xl">

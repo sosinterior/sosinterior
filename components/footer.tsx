@@ -110,7 +110,7 @@ const Footer = () => {
                                             }}
                                         >
                                             <BrandInstagram />
-                                            <Text sx={{ marginLeft: 5 }}>/sosinterior</Text>
+                                            <Text sx={{ marginLeft: 5 }}>sosinterior</Text>
                                         </Anchor>
                                     </Link>
                                 </List.Item>
