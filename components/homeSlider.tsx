@@ -102,7 +102,7 @@ const HomeSlider = () => {
     const onChangeSlider = useCallback((type: string, isClick?: boolean) => {
         setActiveSlider(prev => {
             if (type === 'next') {
-                return prev + 1 > 2 ? 0 : prev + 1
+                return prev + 1 > 1 ? 0 : prev + 1
             } else {
                 return prev - 1 < 0 ? 2 : prev - 1
             }
