@@ -1,5 +1,5 @@
 import colors from '@/theme/colors'
-import { Box, Container, Image, createStyles, Text, Button } from '@mantine/core'
+import { Box, Container, Image, createStyles, Button } from '@mantine/core'
 
 const useStyles = createStyles(theme => ({
     container: {

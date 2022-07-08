@@ -1,5 +1,4 @@
 import { Center, Container, createStyles, Grid, Image, Text } from '@mantine/core'
-import { Home2, View360, Ruler } from 'tabler-icons-react'
 
 import colors from '@/theme/colors'
 
