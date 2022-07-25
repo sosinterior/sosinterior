@@ -155,8 +155,11 @@ const Item: FC<IProps> = ({ title, subTitle, images, itemIndex }) => {
                                 <Box key={`${index}-${itemIndex}`} className={classes.item}>
                                     {items.map((image, i) => {
                                         return (
-                                            <div key={`${itemIndex}-${index}-${i}`}>
-                                                <Box className={`${classes.itemInner} ${i === 0 ? 'left' : 'right'}`}>
+                                            <>
+                                                <Box
+                                                    key={`${itemIndex}-${index}-${i}-00`}
+                                                    className={`${classes.itemInner} ${i === 0 ? 'left' : 'right'}`}
+                                                >
                                                     <Image
                                                         data-fancybox={`news-${itemIndex}`}
                                                         className={classes.image}
@@ -165,8 +168,13 @@ const Item: FC<IProps> = ({ title, subTitle, images, itemIndex }) => {
                                                         src={image}
                                                     />
                                                 </Box>
-                                                {items.length === 1 && <Box className={`${classes.itemInner} right`} />}
-                                            </div>
+                                                {items.length === 1 && (
+                                                    <Box
+                                                        key={`${itemIndex}-${index}-${i}-11`}
+                                                        className={`${classes.itemInner} right`}
+                                                    />
+                                                )}
+                                            </>
                                         )
                                     })}
                                 </Box>
