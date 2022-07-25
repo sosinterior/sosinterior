@@ -13,7 +13,7 @@ const Projects: NextPage = () => {
         <>
             <Header />
             <main>
-                <HeaderArea title="Projeler" imageUrl="http://www.sosinterior.com/demos/project/istanbul/moda/1.jpg" />
+                <HeaderArea title="Projeler" imageUrl="/images/headers/projects.jpg" />
                 <AllProjects />
             </main>
             <Footer />
