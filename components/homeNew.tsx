@@ -1,4 +1,5 @@
 import colors from '@/theme/colors'
+import { useTranslation } from 'next-i18next'
 import { Box, Container, Image, createStyles, Button } from '@mantine/core'
 
 const useStyles = createStyles(theme => ({
@@ -66,6 +67,7 @@ const useStyles = createStyles(theme => ({
 
 const HomeNew = () => {
     // Hooks
+    const { t } = useTranslation('home')
     const { classes } = useStyles()
 
     return (
@@ -87,7 +89,7 @@ const HomeNew = () => {
                     size="lg"
                     sx={{ fontSize: 14, fontWeight: 400 }}
                 >
-                    Haberleri İncele
+                    {t('viewNews')}
                 </Button>
             </Box>
         </Container>

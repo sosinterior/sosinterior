@@ -1,4 +1,5 @@
 import colors from '@/theme/colors'
+import { useTranslation } from 'next-i18next'
 import { Anchor, Container, createStyles, Image, Text } from '@mantine/core'
 
 const useStyles = createStyles(theme => ({
@@ -97,6 +98,7 @@ const useStyles = createStyles(theme => ({
 
 const LatestProjects = () => {
     // Hooks
+    const { t } = useTranslation('home')
     const { classes } = useStyles()
 
     return (
@@ -119,7 +121,7 @@ const LatestProjects = () => {
                 </Anchor>
             </Container>
             <Anchor className={classes.more} href="/projects">
-                TÜMÜNÜ GÖR
+                {t('viewAll')}
             </Anchor>
         </>
     )

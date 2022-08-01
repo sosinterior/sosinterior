@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Box, Button, Center, Container, createStyles, Text } from '@mantine/core'
 import { ChevronLeft, ChevronRight } from 'tabler-icons-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'next-i18next'
 
 const useStyles = createStyles(theme => ({
     sliderImage: {
@@ -68,17 +69,19 @@ const useStyles = createStyles(theme => ({
 }))
 
 const HomeSlider = () => {
+    const { t } = useTranslation('home')
+
     const [activeSlider, setActiveSlider] = useState(0)
     const [images] = useState([
         {
             image: '/images/slider/1.jpg',
-            title: 'İç Mekan',
-            content: 'İç mekânları arındırmanın en pratik, hızlı, zahmetsiz ve eğlenceli biçimi!',
+            title: t('slider1Title'),
+            content: t('slider1Content'),
         },
         {
             image: '/images/slider/2.jpg',
-            title: 'Hızlı Çözüm',
-            content: 'İç mekânlar sadece birkaç günde arınıyor ve yenileniyor.',
+            title: t('slider2Title'),
+            content: t('slider2Content'),
         },
     ])
     // Hooks
@@ -173,7 +176,7 @@ const HomeSlider = () => {
                                                 size="lg"
                                                 sx={{ fontSize: 14, fontWeight: 400 }}
                                             >
-                                                Projeleri Gör
+                                                {t('viewProjects')}
                                             </Button>
                                         </motion.div>
                                     </AnimatePresence>

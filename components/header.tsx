@@ -1,6 +1,7 @@
 import { FC, useCallback, useEffect, useState } from 'react'
 
 import { Anchor, Burger, Container, createStyles, Group, Image } from '@mantine/core'
+import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import colors from '@/theme/colors'
 import Link from 'next/link'
@@ -140,7 +141,7 @@ const useStyles = createStyles(theme => ({
         },
     },
     logoWrapper: {
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
         position: 'absolute',
         paddingRight: 20,
         paddingLeft: 20,
@@ -150,6 +151,7 @@ const useStyles = createStyles(theme => ({
         top: 0,
     },
     logo: {
+        filter: 'brightness(0) invert(1)',
         width: 50,
     },
 }))
@@ -158,6 +160,7 @@ const Header: FC<{ isBorder?: boolean }> = ({ isBorder = false }) => {
     const [isOpened, setIsOpened] = useState(false)
     const [isDarkBg, setIsDarkBg] = useState(false)
     // Hooks
+    const { t } = useTranslation('common')
     const { classes } = useStyles()
     const router = useRouter()
 
@@ -198,32 +201,35 @@ const Header: FC<{ isBorder?: boolean }> = ({ isBorder = false }) => {
                     </Anchor>
                 </Link>
                 <Group className={isOpened ? `${classes.links} active` : classes.links} position="center">
-                    <Anchor className={router.asPath === '/' ? `${classes.link} active` : classes.link} href="/">
-                        Anasayfa
+                    <Anchor
+                        className={router.asPath === '/' ? `${classes.link} active` : classes.link}
+                        href={router.locale && router.locale === 'en' ? '/en' : '/'}
+                    >
+                        {t('home')}
                     </Anchor>
                     <Anchor
                         className={router.asPath === '/about' ? `${classes.link} active` : classes.link}
-                        href="/about"
+                        href={router.locale && router.locale === 'en' ? '/en/about' : '/about'}
                     >
-                        Hakkımızda
+                        {t('about')}
                     </Anchor>
                     <Anchor
                         className={router.asPath === '/projects' ? `${classes.link} active` : classes.link}
-                        href="/projects"
+                        href={router.locale && router.locale === 'en' ? '/en/projects' : '/projects'}
                     >
-                        Projeler
+                        {t('projects')}
                     </Anchor>
                     <Anchor
                         className={router.asPath === '/news' ? `${classes.link} active` : classes.link}
-                        href="/news"
+                        href={router.locale && router.locale === 'en' ? '/en/news' : '/news'}
                     >
-                        Haberler
+                        {t('news')}
                     </Anchor>
                     <Anchor
                         className={router.asPath === '/contact' ? `${classes.link} active` : classes.link}
-                        href="/contact"
+                        href={router.locale && router.locale === 'en' ? '/en/contact' : '/contact'}
                     >
-                        İletişim
+                        {t('contact')}
                     </Anchor>
                 </Group>
             </Container>

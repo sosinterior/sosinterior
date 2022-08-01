@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from 'react'
 import { Box, Button, createStyles, Grid, Image, Text } from '@mantine/core'
 import { ChevronLeft, ChevronRight } from 'tabler-icons-react'
 import { Carousel } from 'react-responsive-carousel'
+import { useTranslation } from 'next-i18next'
 
 import imageSize from '@/components/imageSize'
 import colors from '@/theme/colors'
@@ -45,7 +46,7 @@ const useStyles = createStyles(theme => ({
         backgroundColor: 'rgba(45, 49, 52, 0.9)',
         position: 'absolute',
         width: '50%',
-        height: 90,
+        height: 95,
         bottom: 20,
         left: 0,
         [`@media (max-width: ${theme.breakpoints.lg}px)`]: {
@@ -139,6 +140,7 @@ interface IProps {
 const Item: FC<IProps> = ({ data, images, itemIndex }) => {
     const [isCovers, setIsCovers] = useState<boolean[]>([])
     // Hooks
+    const { t } = useTranslation(['projects'])
     const { classes } = useStyles()
 
     useEffect(() => {
@@ -211,11 +213,11 @@ const Item: FC<IProps> = ({ data, images, itemIndex }) => {
 
                 <Grid className={classes.itemContents} columns={5}>
                     <Grid.Col className={classes.contentItem} span={1}>
-                        <Text className={classes.contentTitle}>Proje</Text>
+                        <Text className={classes.contentTitle}>{t('project')}</Text>
                         <Text className={classes.contentValue}>{data.name}</Text>
                     </Grid.Col>
                     <Grid.Col className={classes.contentItem} span={2}>
-                        <Text className={classes.contentTitle}>Konum</Text>
+                        <Text className={classes.contentTitle}>{t('location')}</Text>
                         <Text className={classes.contentValue}>{data.location}</Text>
                     </Grid.Col>
                     <Grid.Col className={classes.contentItem} span={1}>
@@ -227,7 +229,7 @@ const Item: FC<IProps> = ({ data, images, itemIndex }) => {
                         </Text>
                     </Grid.Col>
                     <Grid.Col className={classes.contentItem} span={1}>
-                        <Text className={classes.contentTitle}>Yıl</Text>
+                        <Text className={classes.contentTitle}>{t('year')}</Text>
                         <Text className={classes.contentValue}>{data.year}</Text>
                     </Grid.Col>
                 </Grid>

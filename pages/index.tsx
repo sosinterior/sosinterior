@@ -1,3 +1,4 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import type { NextPage } from 'next'
 
 // Custom
@@ -23,6 +24,14 @@ const Home: NextPage = () => {
             <Footer />
         </>
     )
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['home', 'common'])),
+        },
+    }
 }
 
 export default Home

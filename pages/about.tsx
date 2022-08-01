@@ -1,12 +1,14 @@
 import { NextPage } from 'next'
 
 import { Anchor, Box, Center, Container, createStyles, Divider, Grid, Image, Text } from '@mantine/core'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import HeaderArea from '@/components/headerArea'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import colors from '@/theme/colors'
 import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
 
 const useStyles = createStyles(theme => ({
     title: {
@@ -161,25 +163,23 @@ const useStyles = createStyles(theme => ({
 
 const About: NextPage = () => {
     // Hooks
+    const { t } = useTranslation(['about', 'common'])
     const { classes } = useStyles()
 
     return (
         <>
             <Header />
             <main>
-                <HeaderArea title="Hakkımızda" imageUrl="/images/headers/about.jpg" />
+                <HeaderArea title={t('about', { ns: 'common' })} imageUrl="/images/headers/about.jpg" />
 
                 <Box sx={{ marginTop: 100 }}>
                     <Container size="xl">
                         <Center>
-                            <Text className={classes.title}>"SOS interior detox" nedir?</Text>
+                            <Text className={classes.title}>{t('title1')}</Text>
                         </Center>
 
                         <Center>
-                            <Text className={classes.content}>
-                                SOS interior detox iç mekanları arındırmanın en pratik, hızlı, zahmetsiz ve eğlenceli
-                                biçimi!
-                            </Text>
+                            <Text className={classes.content}>{t('content1')}</Text>
                         </Center>
                     </Container>
 
@@ -187,20 +187,11 @@ const About: NextPage = () => {
 
                     <Container size="xl">
                         <Center>
-                            <Text className={classes.title}>"SOS interior detox" nasıl çalışır?</Text>
+                            <Text className={classes.title}>{t('title2')}</Text>
                         </Center>
 
                         <Center>
-                            <Text className={classes.content}>
-                                "SOS interior detox" ile iç mekanlar sadece birkaç günde arınıyor ve yenileniyor.
-                                <br />
-                                <br /> SOS interior ekibi detox sürecinde projenin en kısa sürede teslim edilmesini
-                                hedefler. Mekanı ve mekan sahibini tanıdıktan hemen sonra 10-20 gün projelendirme ve
-                                imalat süreci belirlenir. İlk görüşmede belirlenmiş olan tarihte, mekan sahibinin
-                                belirlemiş olduğu bütçeye bağlı kalarak, sadece birkaç günlük çalışma ile iç mekan
-                                tamamen arınmış, yepyeni bir görünüme ulaşır. Zahmetsizdir, mekan temizlenmiş ve
-                                yaşamaya hazır şekilde teslim edilir.
-                            </Text>
+                            <Text className={classes.content}>{t('content2')}</Text>
                         </Center>
                     </Container>
 
@@ -208,17 +199,11 @@ const About: NextPage = () => {
 
                     <Container size="xl">
                         <Center>
-                            <Text className={classes.title}>"SOS interior detox" hangi mekanlarda uygulanır?</Text>
+                            <Text className={classes.title}>{t('title3')}</Text>
                         </Center>
 
                         <Center>
-                            <Text className={classes.content}>
-                                "SOS interior detox" bedenimizin ve zihnimizin olduğu kadar iç mekanlarında arınmaya
-                                ihtiyacı olduğunu savunur.
-                                <br />
-                                <br />
-                                Yaşlanmış, sıkıcı, enerjisi düşük olan iç mekanlarda uygulanır.
-                            </Text>
+                            <Text className={classes.content}>{t('content3')}</Text>
                         </Center>
                     </Container>
 
@@ -230,23 +215,16 @@ const About: NextPage = () => {
                                 <Box className={classes.profile}>
                                     <Image className={classes.image} alt="Serra Özbay" src="/images/portre.jpg" />
                                     <Text className={classes.name}>Serra Özbay</Text>
-                                    <Text className={classes.userTitle}>Kurucu İçmimar</Text>
+                                    <Text className={classes.userTitle}>{t('foundingArchitect')}</Text>
                                 </Box>
                             </Grid.Col>
                             <Grid.Col className={`${classes.profileItem} ${classes.profileItemDescription}`} span={2}>
-                                <Text className={classes.description}>
-                                    Serra Özbay 1989, İzmir doğumlu. İzmir Ekonomi Üniversitesi İç mimarlık ve Çevre
-                                    Tasarımı bölümünden mezun olduktan sonra Londra'da işletme eğitimi aldı. Hemen
-                                    sonrasında İstanbul'a yerleşti. Restoran, Otel ve birçok konut projesinde görev
-                                    aldı. Kariyerine 2016 yılında kurduğu markası "SOS interior" ile devam ediyor. Mekan
-                                    ve insan psikolojisi arasındaki ilişkiyi konut projelerinde deneysel bir biçimde ele
-                                    almayı seviyor. Habertürk gazetesi ve buseterim.com.tr' de yazıyor.{' '}
-                                </Text>
+                                <Text className={classes.description}>{t('about')}</Text>
                                 <Link
                                     href="http://www.haberturk.com/yasam/haber/1300953-evlerde-sonbahar-detoksu"
                                     passHref
                                 >
-                                    <Anchor className={classes.links}>Habertürk Gazetesi</Anchor>
+                                    <Anchor className={classes.links}>{t('newspaper')}</Anchor>
                                 </Link>
                                 <Text className={classes.links} mx={5}>
                                     |
@@ -265,6 +243,14 @@ const About: NextPage = () => {
             <Footer />
         </>
     )
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['about', 'common'])),
+        },
+    }
 }
 
 export default About

@@ -3,15 +3,19 @@ import { FC } from 'react'
 import { Container } from '@mantine/core'
 
 import Item from './Item'
+import { useTranslation } from 'next-i18next'
 
 const AllProjects: FC = () => {
+    // Hooks
+    const { t } = useTranslation(['projects', 'common'])
+
     return (
         <Container size="xl" sx={{ marginTop: 100 }}>
             <Item
                 itemIndex={30}
                 data={{
-                    location: 'Dalyan, Mu[la',
-                    name: 'Ç.E Evi',
+                    location: 'Dalyan, Muğla',
+                    name: `Ç.E ${t('house', { ns: 'common' })}`,
                     size: '320',
                     year: '2022',
                 }}
@@ -53,7 +57,7 @@ const AllProjects: FC = () => {
                 itemIndex={0}
                 data={{
                     location: 'Atılgan Royal, İzmir',
-                    name: 'Z.A Evi',
+                    name: `Z.A ${t('house', { ns: 'common' })}`,
                     size: '180',
                     year: '2022',
                 }}
@@ -76,7 +80,7 @@ const AllProjects: FC = () => {
                 itemIndex={1}
                 data={{
                     location: 'Emirgan, İstanbul',
-                    name: 'B.F Evi',
+                    name: `B.F ${t('house', { ns: 'common' })}`,
                     size: '170',
                     year: '2022',
                 }}
@@ -95,7 +99,7 @@ const AllProjects: FC = () => {
                 itemIndex={2}
                 data={{
                     location: 'Koşuyolu, İstanbul',
-                    name: 'Ö.S Evi',
+                    name: `Ö.S ${t('house', { ns: 'common' })}`,
                     size: '180',
                     year: '2022',
                 }}
@@ -115,7 +119,7 @@ const AllProjects: FC = () => {
                 itemIndex={3}
                 data={{
                     location: 'Moda, İstanbul',
-                    name: 'A.K Evi',
+                    name: `A.K ${t('house', { ns: 'common' })}`,
                     size: '18',
                     year: '2021',
                 }}
@@ -133,7 +137,7 @@ const AllProjects: FC = () => {
                 itemIndex={4}
                 data={{
                     location: 'Nişantaşı, İstanbul',
-                    name: 'Dr. UH Klinik',
+                    name: `Dr. UH ${t('clinic')}`,
                     size: '235',
                     year: '2021',
                 }}
@@ -155,7 +159,7 @@ const AllProjects: FC = () => {
                 itemIndex={5}
                 data={{
                     location: 'Zekeriyaköy, İstanbul',
-                    name: 'Ö.D Evi, SOSinterior X Gigi Kids',
+                    name: `Ö.D ${t('house', { ns: 'common' })}, SOSinterior X Gigi Kids`,
                     size: '34',
                     year: '2021',
                 }}
@@ -175,7 +179,7 @@ const AllProjects: FC = () => {
                 itemIndex={6}
                 data={{
                     location: 'Ulus, İstanbul',
-                    name: 'Z.S Evi',
+                    name: `Z.S ${t('house', { ns: 'common' })}`,
                     size: '135',
                     year: '2021',
                 }}
@@ -198,7 +202,7 @@ const AllProjects: FC = () => {
                 itemIndex={7}
                 data={{
                     location: 'Mandarin Oriental, Bodrum',
-                    name: 'D.K Evi',
+                    name: `D.K ${t('house', { ns: 'common' })}`,
                     size: '300',
                     year: '2020',
                 }}
@@ -219,7 +223,7 @@ const AllProjects: FC = () => {
                 itemIndex={8}
                 data={{
                     location: 'Naile Sultan Korusu, İstanbul',
-                    name: 'A.A Evi',
+                    name: `A.A ${t('house', { ns: 'common' })}`,
                     size: '125',
                     year: '2020',
                 }}
@@ -260,7 +264,7 @@ const AllProjects: FC = () => {
                 itemIndex={9}
                 data={{
                     location: 'Kalamış, İstanbul',
-                    name: 'S.O Evi',
+                    name: `S.O ${t('house', { ns: 'common' })}`,
                     size: '125',
                     year: '2020',
                 }}
@@ -279,7 +283,7 @@ const AllProjects: FC = () => {
                 itemIndex={10}
                 data={{
                     location: 'Kuzguncuk, İstanbul',
-                    name: 'P.Z Yalısı',
+                    name: `P.Z ${t('mansion')}`,
                     size: '220',
                     year: '2020',
                 }}
@@ -300,7 +304,7 @@ const AllProjects: FC = () => {
                 itemIndex={11}
                 data={{
                     location: 'Ataköy, İstanbul',
-                    name: 'A.S Evi',
+                    name: `A.S ${t('house', { ns: 'common' })}`,
                     size: '130',
                     year: '2020',
                 }}
@@ -321,7 +325,7 @@ const AllProjects: FC = () => {
                 itemIndex={12}
                 data={{
                     location: 'Büyükhanlı Akatlar, İstanbul',
-                    name: 'G.E Evi',
+                    name: `G.E ${t('house', { ns: 'common' })}`,
                     size: '160',
                     year: '2020',
                 }}
@@ -340,7 +344,7 @@ const AllProjects: FC = () => {
                 itemIndex={13}
                 data={{
                     location: 'Yeşilyurt, İstanbul',
-                    name: 'Ç.D Evi',
+                    name: `Ç.D ${t('house', { ns: 'common' })}`,
                     size: '28',
                     year: '2019',
                 }}
@@ -364,7 +368,7 @@ const AllProjects: FC = () => {
                 itemIndex={14}
                 data={{
                     location: 'Levent, İstanbul',
-                    name: 'G.A Evi',
+                    name: `G.A ${t('house', { ns: 'common' })}`,
                     size: '230',
                     year: '2019',
                 }}
@@ -389,7 +393,7 @@ const AllProjects: FC = () => {
                 itemIndex={15}
                 data={{
                     location: 'Reisdere, Çeşme',
-                    name: 'I.Ö Yaz Evi',
+                    name: `I.Ö Yaz ${t('house', { ns: 'common' })}`,
                     size: '220',
                     year: '2019',
                 }}
@@ -421,7 +425,7 @@ const AllProjects: FC = () => {
                 itemIndex={16}
                 data={{
                     location: 'Seba Flora, Levazım, İstanbul',
-                    name: 'N.C Evi',
+                    name: `N.C ${t('house', { ns: 'common' })}`,
                     size: '240',
                     year: '2019',
                 }}
@@ -439,7 +443,7 @@ const AllProjects: FC = () => {
                 itemIndex={17}
                 data={{
                     location: 'Mall of İstanbul',
-                    name: 'Buse’s Garage Sale',
+                    name: `Buse’s Garage Sale`,
                     size: '66',
                     year: '2019',
                 }}
@@ -457,7 +461,7 @@ const AllProjects: FC = () => {
                 itemIndex={18}
                 data={{
                     location: 'Arnavutköy, İstanbul',
-                    name: 'H.Y Evi',
+                    name: `H.Y ${t('house', { ns: 'common' })}`,
                     size: '140',
                     year: '2019',
                 }}
@@ -486,7 +490,7 @@ const AllProjects: FC = () => {
                 itemIndex={19}
                 data={{
                     location: 'Çekmeköy, İstanbul',
-                    name: 'I.Ö Evi',
+                    name: `I.Ö ${t('house', { ns: 'common' })}`,
                     size: '200',
                     year: '2018',
                 }}
@@ -508,7 +512,7 @@ const AllProjects: FC = () => {
                 itemIndex={20}
                 data={{
                     location: 'Bodrum, Muğla',
-                    name: 'Sahil Evi',
+                    name: `Sahil ${t('house', { ns: 'common' })}`,
                     size: '25',
                     year: '2018',
                 }}
@@ -530,7 +534,7 @@ const AllProjects: FC = () => {
                 itemIndex={21}
                 data={{
                     location: 'Tarabya, İstanbul',
-                    name: "Nil'in Odası",
+                    name: `Nil'in ${t('room')}`,
                     size: '22',
                     year: '2018',
                 }}
@@ -548,7 +552,7 @@ const AllProjects: FC = () => {
                 itemIndex={22}
                 data={{
                     location: 'Kartal, İstanbul',
-                    name: 'Proje Pack Ofis',
+                    name: `Proje Pack ${t('office')}`,
                     size: '210',
                     year: '2018',
                 }}
@@ -566,7 +570,7 @@ const AllProjects: FC = () => {
                 itemIndex={23}
                 data={{
                     location: 'Levent, İstanbul',
-                    name: 'D.A Evi',
+                    name: `D.A ${t('house', { ns: 'common' })}`,
                     size: '110',
                     year: '2018',
                 }}
@@ -585,7 +589,7 @@ const AllProjects: FC = () => {
                 itemIndex={24}
                 data={{
                     location: 'Seba Ofis Bulvarı, İstanbul',
-                    name: 'Z.E Avukatlık Bürosu',
+                    name: `Z.E ${t('lawFirm')}`,
                     size: '220',
                     year: '2018',
                 }}
@@ -601,7 +605,7 @@ const AllProjects: FC = () => {
                 itemIndex={25}
                 data={{
                     location: 'Ataşehir, İstanbul',
-                    name: 'Z.K Evi',
+                    name: `Z.K ${t('house', { ns: 'common' })}`,
                     size: '110',
                     year: '2017',
                 }}
@@ -618,7 +622,7 @@ const AllProjects: FC = () => {
                 itemIndex={26}
                 data={{
                     location: 'Bodrum, Muğla',
-                    name: 'B.T Evi',
+                    name: `B.T ${t('house', { ns: 'common' })}`,
                     size: '220',
                     year: '2017',
                 }}
@@ -649,7 +653,7 @@ const AllProjects: FC = () => {
                 itemIndex={27}
                 data={{
                     location: 'Karşıyaka, İzmir',
-                    name: 'H.K. Evi',
+                    name: `H.K. ${t('house', { ns: 'common' })}`,
                     size: '120',
                     year: '2017',
                 }}
@@ -684,7 +688,7 @@ const AllProjects: FC = () => {
                 itemIndex={28}
                 data={{
                     location: 'Maslak, İstanbul',
-                    name: 'E.E. Penthouse',
+                    name: `E.E. Penthouse`,
                     size: '320',
                     year: '2016',
                 }}
@@ -708,7 +712,7 @@ const AllProjects: FC = () => {
                 itemIndex={29}
                 data={{
                     location: 'Çekmeköy, İstanbul',
-                    name: 'N.K Evi',
+                    name: `N.K ${t('house', { ns: 'common' })}`,
                     size: '160',
                     year: '2016',
                 }}

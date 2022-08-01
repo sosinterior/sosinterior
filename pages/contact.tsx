@@ -1,6 +1,7 @@
 import { NextPage } from 'next'
 
 import { Anchor, Box, Button, Container, createStyles, Input, List, Text, Textarea } from '@mantine/core'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { BrandInstagram, Mail, MapPin } from 'tabler-icons-react'
 
 import HeaderArea from '@/components/headerArea'
@@ -8,6 +9,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import colors from '@/theme/colors'
 import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
 
 const useStyles = createStyles(theme => ({
     container: {
@@ -63,6 +65,7 @@ const useStyles = createStyles(theme => ({
 
 const Contact: NextPage = () => {
     // Hooks
+    const { t } = useTranslation(['contact', 'common'])
     const { classes } = useStyles()
 
     return (
@@ -72,23 +75,23 @@ const Contact: NextPage = () => {
                 <HeaderArea
                     backgroundPosition="center bottom -340px"
                     imageUrl="/images/headers/contact.jpg"
-                    title="İletişim"
+                    title={t('contact', { ns: 'common' })}
                 />
                 <Container size="xl">
                     <Box className={classes.container}>
                         <Box className={classes.itemLeft}>
-                            <Text className={classes.title}>İletişim</Text>
+                            <Text className={classes.title}>{t('contact', { ns: 'common' })}</Text>
 
                             <Box className={classes.itemLeftInner}>
                                 <Input
                                     sx={{ marginTop: 12, color: colors.antrazit }}
-                                    placeholder="Ad Soyad"
+                                    placeholder={t('name')}
                                     radius="md"
                                 />
                                 <Input placeholder="Email" radius="md" sx={{ marginTop: 12, color: colors.antrazit }} />
                                 <Textarea
                                     sx={{ marginTop: 12, color: colors.antrazit }}
-                                    placeholder="Mesaj"
+                                    placeholder={t('message')}
                                     radius="md"
                                 />
 
@@ -98,7 +101,7 @@ const Contact: NextPage = () => {
                                     size="md"
                                     sx={{ marginTop: 12, fontSize: 14, fontWeight: 400 }}
                                 >
-                                    Gönder
+                                    {t('submit')}
                                 </Button>
                             </Box>
                         </Box>
@@ -110,7 +113,7 @@ const Contact: NextPage = () => {
                                             <MapPin />
                                         </Text>
                                         <Text>
-                                            <b>Adres</b>
+                                            <b>{t('address')}</b>
                                             <br />
                                             Bebek, İstanbul
                                         </Text>
@@ -122,7 +125,7 @@ const Contact: NextPage = () => {
                                             <Mail />
                                         </Text>
                                         <Text>
-                                            <b>Email</b>
+                                            <b>{t('email')}</b>
                                             <br />
                                             info@sosinterior.com
                                         </Text>
@@ -153,6 +156,14 @@ const Contact: NextPage = () => {
             <Footer />
         </>
     )
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['contact', 'common'])),
+        },
+    }
 }
 
 export default Contact

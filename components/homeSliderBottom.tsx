@@ -1,5 +1,6 @@
 import { Box, Container, createStyles, Image, Text } from '@mantine/core'
 
+import { useTranslation } from 'next-i18next'
 import colors from '@/theme/colors'
 
 const useStyles = createStyles(theme => ({
@@ -49,16 +50,14 @@ const useStyles = createStyles(theme => ({
 
 const HomeSliderBottom = () => {
     // Hooks
+    const { t } = useTranslation('home')
     const { classes } = useStyles()
 
     return (
         <Container fluid className={classes.container}>
             <Container size="xl">
                 <Box className={classes.body}>
-                    <Text className={classes.title}>
-                        Mekân ve insan psikolojisi arasındaki ilişkiyi konut projelerinde deneysel bir biçimde ele
-                        almayı seviyoruz.”
-                    </Text>
+                    <Text className={classes.title}>{t('comment')}</Text>
                     <Box className={classes.content}>
                         <Image
                             alt="Serra Özbay"
@@ -67,7 +66,7 @@ const HomeSliderBottom = () => {
                         />
                         <Box sx={{ marginLeft: 12 }}>
                             <Text sx={{ fontSize: 18, color: '#fff' }}>Serra Özbay</Text>
-                            <Text sx={{ fontSize: 14, color: '#fff', fontWeight: 200 }}>Kurucu İçmimar</Text>
+                            <Text sx={{ fontSize: 14, color: '#fff', fontWeight: 200 }}>{t('foundingArchitect')}</Text>
                         </Box>
                     </Box>
                 </Box>

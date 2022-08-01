@@ -1,0 +1,10 @@
+{
+    "project": "Proje",
+    "location": "Konum",
+    "year": "Yıl",
+    "clinic": "Klinik",
+    "mansion": "Yalısı",
+    "room": "Odası",
+    "office": "Ofis",
+    "lawFirm": "Avukatlık Bürosu"
+}

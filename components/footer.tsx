@@ -2,6 +2,7 @@ import { Anchor, Box, Container, createStyles, Divider, Grid, Image, List, Text 
 import { BrandInstagram, Mail, MapPin } from 'tabler-icons-react'
 import Link from 'next/link'
 
+import { useTranslation } from 'next-i18next'
 import colors from '@/theme/colors'
 
 const useStyles = createStyles(theme => ({
@@ -58,6 +59,7 @@ const useStyles = createStyles(theme => ({
 
 const Footer = () => {
     // Hooks
+    const { t } = useTranslation('common')
     const { classes } = useStyles()
 
     return (
@@ -79,7 +81,7 @@ const Footer = () => {
                         </Grid.Col>
 
                         <Grid.Col className={classes.gridItem} span={1}>
-                            <Text className={classes.title}>İletişim</Text>
+                            <Text className={classes.title}>{t('contact')}</Text>
                             <List size="sm" listStyleType="none">
                                 <List.Item>
                                     <Text className={classes.contactItem}>
@@ -118,7 +120,7 @@ const Footer = () => {
                         </Grid.Col>
 
                         <Grid.Col className={classes.gridItem} span={1}>
-                            <Text className={classes.title}>Son Projeler</Text>
+                            <Text className={classes.title}>{t('latestProjects')}</Text>
                             <List size="sm" listStyleType="none">
                                 <List.Item>
                                     <Link passHref href="/">

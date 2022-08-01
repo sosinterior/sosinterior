@@ -1,5 +1,6 @@
 import { Center, Container, createStyles, Grid, Image, Text } from '@mantine/core'
 
+import { useTranslation } from 'next-i18next'
 import colors from '@/theme/colors'
 
 const useStyles = createStyles(theme => ({
@@ -34,43 +35,32 @@ const useStyles = createStyles(theme => ({
 
 const HomeServices = () => {
     // Hooks
+    const { t } = useTranslation('home')
     const { classes } = useStyles()
 
     return (
         <Container size="xl">
             <Center>
-                <Text className={classes.title}>Neler Yaparız</Text>
+                <Text className={classes.title}>{t('whatWeDo')}</Text>
             </Center>
 
             <Grid className={classes.items} columns={3}>
                 <Grid.Col className={classes.item} span={1}>
                     <Image width={60} src="/images/services-icon.jpg" />
-                    <Text className={classes.titles}>SOS Interior Evleri</Text>
-                    <Text className={classes.contents}>
-                        İç mekânları arındırmak, rahatlatmak, mekân sahipleri ve iç mekân arasındaki ilişkiyi
-                        kuvvetlendirmeyi hedefleyerek yola çıktığımız projelerde kullanıcıları iyi analiz ederek, beğeni
-                        ve ihtiyaçlarını kendi çizgimizde yorumlamayı ve ince detaylara kafa yormayı çok seviyoruz.
-                    </Text>
+                    <Text className={classes.titles}>{t('service1Title')}</Text>
+                    <Text className={classes.contents}>{t('service1Desc')}</Text>
                 </Grid.Col>
 
                 <Grid.Col className={classes.item} span={1}>
                     <Image width={60} src="/images/services-icon.jpg" />
-                    <Text className={classes.titles}>SOS Interior Detox</Text>
-                    <Text className={classes.contents}>
-                        SOS interior detox ile projelerin en kısa sürede teslim edilmesini hedefliyoruz. Mekânı ve mekân
-                        sahibini tanıdıktan hemen sonra birkaç günlük çalışma ile iç mekânlar tamamen arınmış, yepyeni
-                        bir görünüme ulaşıyor. İç mekânlar temizlenmiş ve yaşamaya hazır şekilde teslim ediliyor.
-                    </Text>
+                    <Text className={classes.titles}>{t('service2Title')}</Text>
+                    <Text className={classes.contents}>{t('service2Desc')}</Text>
                 </Grid.Col>
 
                 <Grid.Col className={classes.item} span={1}>
                     <Image width={60} src="/images/services-icon.jpg" />
-                    <Text className={classes.titles}>SOS Interior Kids</Text>
-                    <Text className={classes.contents}>
-                        Konut projeleri ile başlayan tasarım yolculuğumuz çocuk odaları ile daha keyifli bir hâl alıyor.
-                        Özgün ve bir o kadar eğlenceli iç mekanlarda yaratıcılığı ve eğlenceyi ön plana çıkarırken küçük
-                        kullanıcılarımıza sınırsız ve özgür hissedebilecekleri yaşam alanları sunuyoruz.
-                    </Text>
+                    <Text className={classes.titles}>{t('service3Title')}</Text>
+                    <Text className={classes.contents}>{t('service3Desc')}</Text>
                 </Grid.Col>
             </Grid>
         </Container>

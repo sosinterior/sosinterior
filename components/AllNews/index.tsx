@@ -1,16 +1,20 @@
 import { FC } from 'react'
 
+import { useTranslation } from 'next-i18next'
 import { Container } from '@mantine/core'
 
 import Item from './Item'
 
 const AllNews: FC = () => {
+    // Hooks
+    const { t } = useTranslation(['news'])
+
     return (
         <Container size="xl" sx={{ marginTop: 100 }}>
             <Item
                 images={['/images/news/marieclaire/4/1.jpeg', '/images/news/marieclaire/4/2.jpg']}
                 title="MARIE CLAIRE MAISON"
-                subTitle="Mayıs Sayısı, 2022"
+                subTitle={`${t('may')} ${t('issue')}, 2022`}
                 itemIndex={13}
             />
 
@@ -25,7 +29,7 @@ const AllNews: FC = () => {
                     '/images/news/mekan/3/7.jpg',
                 ]}
                 title="MEKAN"
-                subTitle="Ocak Sayısı, 2022"
+                subTitle={`${t('january')} ${t('issue')}, 2022`}
                 itemIndex={12}
             />
 
@@ -39,7 +43,7 @@ const AllNews: FC = () => {
                     '/images/news/instylehome/1/6.jpg',
                 ]}
                 title="IN STYLE HOME"
-                subTitle="İlkbahar Sayısı, 2021"
+                subTitle={`${t('spring')} ${t('issue')}, 2021`}
                 itemIndex={11}
             />
 
@@ -50,7 +54,7 @@ const AllNews: FC = () => {
                     '/images/news/marieclaire/3/3.jpg',
                 ]}
                 title="MARIE CLAIRE MAISON"
-                subTitle="Nisan Sayısı, 2021"
+                subTitle={`${t('april')} ${t('issue')}, 2021`}
                 itemIndex={10}
             />
 
@@ -63,7 +67,7 @@ const AllNews: FC = () => {
                     '/images/news/mekan/2/5.jpg',
                 ]}
                 title="MEKAN"
-                subTitle="Mart Sayısı, 2021"
+                subTitle={`${t('march')} ${t('issue')}, 2021`}
                 itemIndex={8}
             />
 
@@ -75,7 +79,7 @@ const AllNews: FC = () => {
                     '/images/news/mekan/1/4.jpg',
                 ]}
                 title="MEKAN"
-                subTitle="Kasım Sayısı, 2019"
+                subTitle={`${t('november')} ${t('issue')}, 2019`}
                 itemIndex={7}
             />
 
@@ -88,7 +92,7 @@ const AllNews: FC = () => {
                     '/images/news/marieclaire/2/5.jpg',
                 ]}
                 title="MARIE CLAIRE MAISON"
-                subTitle="Eylül Sayısı, 2019"
+                subTitle={`${t('september')} ${t('issue')}, 2019`}
                 itemIndex={6}
             />
 
@@ -100,14 +104,14 @@ const AllNews: FC = () => {
                     '/images/news/homeart/1/4.jpg',
                 ]}
                 title="HOME ART"
-                subTitle="300. Sayısı, 2018"
+                subTitle={`300. ${t('issue')}, 2018`}
                 itemIndex={5}
             />
 
             <Item
                 images={['/images/news/alldecor/3/1.jpg', '/images/news/alldecor/3/2.jpg']}
                 title="ALL DECOR"
-                subTitle="Yaz Sayısı, 2018"
+                subTitle={`${t('summer')} ${t('issue')}, 2018`}
                 itemIndex={4}
             />
 
@@ -118,7 +122,7 @@ const AllNews: FC = () => {
                     '/images/news/marieclaire/1/3.jpg',
                 ]}
                 title="MARIE CLAIRE MAISON"
-                subTitle="Şubat Sayısı, 2018"
+                subTitle={`${t('february')} ${t('issue')}, 2018`}
                 itemIndex={3}
             />
 
@@ -129,7 +133,7 @@ const AllNews: FC = () => {
                     '/images/news/alldecor/2/3.jpg',
                 ]}
                 title="ALL DECOR"
-                subTitle="Yaz Özel Sayısı, 2017"
+                subTitle={`${t('summer')} ${t('special')} ${t('issue')}, 2017`}
                 itemIndex={2}
             />
 
@@ -140,13 +144,13 @@ const AllNews: FC = () => {
                     '/images/news/alldecor/1/3.jpg',
                 ]}
                 title="ALL DECOR"
-                subTitle="Mart-Nisan, 2017"
+                subTitle={`${t('march')}-${t('april')}, 2017`}
                 itemIndex={1}
             />
 
             <Item
                 images={['/images/news/haberturk/1/1.png']}
-                title="HABERTÜRK GAZETESİ"
+                title={`Habertürk ${t('newspaper')}`}
                 subTitle="24.09.2016"
                 itemIndex={0}
             />

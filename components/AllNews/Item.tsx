@@ -155,11 +155,8 @@ const Item: FC<IProps> = ({ title, subTitle, images, itemIndex }) => {
                                 <Box key={`${index}-${itemIndex}`} className={classes.item}>
                                     {items.map((image, i) => {
                                         return (
-                                            <>
-                                                <Box
-                                                    key={`${itemIndex}-${index}-${i}-00`}
-                                                    className={`${classes.itemInner} ${i === 0 ? 'left' : 'right'}`}
-                                                >
+                                            <div key={`${itemIndex}-${index}-${i}-00`}>
+                                                <Box className={`${classes.itemInner} ${i === 0 ? 'left' : 'right'}`}>
                                                     <Image
                                                         data-fancybox={`news-${itemIndex}`}
                                                         className={classes.image}
@@ -174,7 +171,7 @@ const Item: FC<IProps> = ({ title, subTitle, images, itemIndex }) => {
                                                         className={`${classes.itemInner} right`}
                                                     />
                                                 )}
-                                            </>
+                                            </div>
                                         )
                                     })}
                                 </Box>
