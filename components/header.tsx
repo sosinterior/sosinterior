@@ -1,6 +1,6 @@
 import { FC, useCallback, useEffect, useState } from 'react'
 
-import { Anchor, Burger, Container, createStyles, Group, Image } from '@mantine/core'
+import { Anchor, Box, Burger, Container, createStyles, Group, Image } from '@mantine/core'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import colors from '@/theme/colors'
@@ -231,6 +231,30 @@ const Header: FC<{ isBorder?: boolean }> = ({ isBorder = false }) => {
                     >
                         {t('contact')}
                     </Anchor>
+                    <Box className={router.asPath === '/contact' ? `${classes.link} active` : classes.link}>
+                        <Anchor
+                            sx={{
+                                color: '#fff',
+                                marginRight: 10,
+                                textDecoration: 'none !important',
+                                fontWeight: router.locale && router.locale === 'tr' ? 700 : 400,
+                            }}
+                            href="/"
+                        >
+                            TR
+                        </Anchor>
+
+                        <Anchor
+                            sx={{
+                                color: '#fff',
+                                textDecoration: 'none !important',
+                                fontWeight: router.locale && router.locale === 'en' ? 700 : 400,
+                            }}
+                            href="/en"
+                        >
+                            EN
+                        </Anchor>
+                    </Box>
                 </Group>
             </Container>
         </header>
