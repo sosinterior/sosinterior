@@ -1,6 +1,7 @@
 import colors from '@/theme/colors'
 import { useTranslation } from 'next-i18next'
 import { Anchor, Container, createStyles, Image, Text } from '@mantine/core'
+import { useRouter } from 'next/router'
 
 const useStyles = createStyles(theme => ({
     container: {
@@ -98,29 +99,42 @@ const useStyles = createStyles(theme => ({
 
 const LatestProjects = () => {
     // Hooks
-    const { t } = useTranslation('home')
+    const { t } = useTranslation(['home', 'common'])
     const { classes } = useStyles()
+    const router = useRouter()
 
     return (
         <>
             <Container fluid className={classes.container}>
-                <Anchor className={classes.item} href="/projects">
+                <Anchor
+                    className={classes.item}
+                    href={router.locale && router.locale === 'en' ? '/en/projects' : '/projects'}
+                >
                     <Image className={classes.image} src="/images/projects/31/1.jpg" alt="Ç.E Evi" />
-                    <Text className={classes.title}>Ç.E Evi</Text>
+                    <Text className={classes.title}>Ç.E {t('house', { ns: 'common' })}</Text>
                     <Text className={classes.location}>Dalyan, Muğla</Text>
                 </Anchor>
-                <Anchor className={classes.item} href="/projects">
+                <Anchor
+                    className={classes.item}
+                    href={router.locale && router.locale === 'en' ? '/en/projects' : '/projects'}
+                >
                     <Image className={classes.image} src="/images/projects/1/1.jpg" alt="Z.A Evi" />
-                    <Text className={classes.title}>Z.A Evi</Text>
+                    <Text className={classes.title}>Z.A {t('house', { ns: 'common' })}</Text>
                     <Text className={classes.location}>Atılgan Royal, İzmir</Text>
                 </Anchor>
-                <Anchor className={classes.item} href="/projects">
+                <Anchor
+                    className={classes.item}
+                    href={router.locale && router.locale === 'en' ? '/en/projects' : '/projects'}
+                >
                     <Image className={classes.image} src="/images/projects/2/1.jpg" alt="B.F Evi" />
-                    <Text className={classes.title}>B.F Evi</Text>
+                    <Text className={classes.title}>B.F {t('house', { ns: 'common' })}</Text>
                     <Text className={classes.location}>Emirgan, İstanbul</Text>
                 </Anchor>
             </Container>
-            <Anchor className={classes.more} href="/projects">
+            <Anchor
+                className={classes.more}
+                href={router.locale && router.locale === 'en' ? '/en/projects' : '/projects'}
+            >
                 {t('viewAll')}
             </Anchor>
         </>
