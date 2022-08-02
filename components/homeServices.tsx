@@ -1,4 +1,4 @@
-import { Center, Container, createStyles, Grid, Image, Text } from '@mantine/core'
+import { /* Center, */ Container, createStyles, Grid, Image, Text } from '@mantine/core'
 
 import { useTranslation } from 'next-i18next'
 import colors from '@/theme/colors'
@@ -40,9 +40,9 @@ const HomeServices = () => {
 
     return (
         <Container size="xl">
-            <Center>
+            {/* <Center>
                 <Text className={classes.title}>{t('whatWeDo')}</Text>
-            </Center>
+            </Center> */}
 
             <Grid className={classes.items} columns={3}>
                 <Grid.Col className={classes.item} span={1}>
