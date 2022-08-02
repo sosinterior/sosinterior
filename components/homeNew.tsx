@@ -38,7 +38,6 @@ const useStyles = createStyles(theme => ({
         img: {
             height: '400px !important',
             width: '400px !important',
-            borderRadius: '200px',
             margin: '0 auto',
             [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
                 height: '300px !important',
