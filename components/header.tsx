@@ -119,6 +119,11 @@ const useStyles = createStyles(theme => ({
             '&.active': {
                 left: 0,
             },
+            '&.noBorder': {
+                '&:before': {
+                    display: 'none',
+                },
+            },
             '&:before': {
                 backgroundColor: '#fff',
                 position: 'absolute',
@@ -200,7 +205,14 @@ const Header: FC<{ isBorder?: boolean }> = ({ isBorder = false }) => {
                         <Image alt="SOS Interior" width="50px" className={classes.logo} src="/images/logo.png" />
                     </Anchor>
                 </Link>
-                <Group className={isOpened ? `${classes.links} active` : classes.links} position="center">
+                <Group
+                    className={
+                        isOpened
+                            ? `${isBorder ? classes.links : classes.links + ' noBorder'} active`
+                            : `${isBorder ? classes.links : classes.links + ' noBorder'}`
+                    }
+                    position="center"
+                >
                     <Anchor
                         className={router.asPath === '/' ? `${classes.link} active` : classes.link}
                         href={router.locale && router.locale === 'en' ? '/en' : '/'}
