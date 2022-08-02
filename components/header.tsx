@@ -156,7 +156,6 @@ const useStyles = createStyles(theme => ({
         top: 0,
     },
     logo: {
-        filter: 'brightness(0) invert(1)',
         width: 50,
     },
 }))
