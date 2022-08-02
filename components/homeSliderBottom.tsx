@@ -15,7 +15,7 @@ const useStyles = createStyles(theme => ({
             flexDirection: 'column',
         },
     },
-    title: {
+    /* title: {
         flex: 1,
         fontSize: 24,
         color: '#fff',
@@ -28,8 +28,9 @@ const useStyles = createStyles(theme => ({
             marginTop: 24,
             order: 1,
         },
-    },
+    }, */
     content: {
+        justifyContent: 'center',
         alignItems: 'center',
         display: 'flex',
         flex: 1,
@@ -57,7 +58,7 @@ const HomeSliderBottom = () => {
         <Container fluid className={classes.container}>
             <Container size="xl">
                 <Box className={classes.body}>
-                    <Text className={classes.title}>{t('comment')}</Text>
+                    {/* <Text className={classes.title}>{t('comment')}</Text> */}
                     <Box className={classes.content}>
                         <Image
                             alt="Serra Özbay"
