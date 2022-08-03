@@ -3,7 +3,6 @@ import { FC } from 'react'
 import { Box, Button, createStyles, Image, Text } from '@mantine/core'
 import { ChevronLeft, ChevronRight } from 'tabler-icons-react'
 import { Carousel } from 'react-responsive-carousel'
-import chunk from 'lodash.chunk'
 
 import colors from '@/theme/colors'
 
@@ -26,23 +25,9 @@ const useStyles = createStyles(theme => ({
             height: 'auto',
         },
     },
-    itemInner: {
-        flex: 1,
-        '&.left': {
-            paddingRight: 15,
-            [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-                paddingRight: 3,
-            },
-        },
-        '&.right': {
-            paddingLeft: 15,
-            [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-                paddingLeft: 3,
-            },
-        },
-    },
     image: {
         backgroundColor: '#fff',
+        width: '100%',
         img: {
             height: '650px !important',
             width: '100%',
@@ -144,63 +129,37 @@ const Item: FC<IProps> = ({ title, subTitle, images, itemIndex }) => {
                         {subTitle}
                     </Text>
                 </Box>
-                {images.length > 2 ? (
+                {images.length > 1 ? (
                     <Carousel
                         renderArrowNext={renderArrowNext}
                         renderArrowPrev={renderArrowPrev}
                         {...getConfigurableProps()}
                     >
-                        {chunk(images, 2).map((items, index) => {
+                        {images.map((image, index) => {
                             return (
                                 <Box key={`${index}-${itemIndex}`} className={classes.item}>
-                                    {items.map((image, i) => {
-                                        return (
-                                            <div key={`${itemIndex}-${index}-${i}-00`}>
-                                                <Box className={`${classes.itemInner} ${i === 0 ? 'left' : 'right'}`}>
-                                                    <Image
-                                                        data-fancybox={`news-${itemIndex}`}
-                                                        className={classes.image}
-                                                        alt={`${title} ${index} ${i}`}
-                                                        data-src={image}
-                                                        src={image}
-                                                    />
-                                                </Box>
-                                                {items.length === 1 && (
-                                                    <Box
-                                                        key={`${itemIndex}-${index}-${i}-11`}
-                                                        className={`${classes.itemInner} right`}
-                                                    />
-                                                )}
-                                            </div>
-                                        )
-                                    })}
+                                    <Image
+                                        data-fancybox={`projects-${itemIndex}`}
+                                        alt={`${title} ${subTitle} ${index}`}
+                                        className={classes.image}
+                                        data-src={image}
+                                        fit="contain"
+                                        src={image}
+                                    />
                                 </Box>
                             )
                         })}
                     </Carousel>
                 ) : (
-                    images.length !== 0 && (
+                    images.length === 1 && (
                         <Box className={classes.item}>
-                            <Box className={`${classes.itemInner} left`}>
-                                <Image
-                                    data-fancybox={`news-${itemIndex}`}
-                                    className={classes.image}
-                                    data-src={images[0]}
-                                    alt={`${title} 0`}
-                                    src={images[0]}
-                                />
-                            </Box>
-                            <Box className={`${classes.itemInner} right`}>
-                                {images[1] !== undefined && (
-                                    <Image
-                                        data-fancybox={`news-${itemIndex}`}
-                                        className={classes.image}
-                                        data-src={images[1]}
-                                        alt={`${title} 1`}
-                                        src={images[1]}
-                                    />
-                                )}
-                            </Box>
+                            <Image
+                                data-fancybox={`news-${itemIndex}`}
+                                className={classes.image}
+                                data-src={images[0]}
+                                alt={`${title} 0`}
+                                src={images[0]}
+                            />
                         </Box>
                     )
                 )}

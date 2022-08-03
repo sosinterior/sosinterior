@@ -1,9 +1,9 @@
 import { FC } from 'react'
 
+import { useTranslation } from 'next-i18next'
 import { Container } from '@mantine/core'
 
 import Item from './Item'
-import { useTranslation } from 'next-i18next'
 
 const AllProjects: FC = () => {
     // Hooks
