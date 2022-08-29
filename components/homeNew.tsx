@@ -29,18 +29,18 @@ const useStyles = createStyles(theme => ({
     },
     image: {
         maxWidth: '100%',
-        height: 400,
+        height: 'auto',
         width: 400,
         [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-            height: 300,
+            height: 'auto',
             width: 300,
         },
         img: {
-            height: '400px !important',
+            height: 'auto !important',
             width: '400px !important',
             margin: '0 auto',
             [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
-                height: '300px !important',
+                height: 'auto !important',
                 width: '300px !important',
                 maxWidth: '100%',
             },
@@ -72,11 +72,7 @@ const HomeNew = () => {
     return (
         <Container size="xl" className={classes.container}>
             <Box className={`${classes.item} ${classes.imageItem}`}>
-                <Image
-                    src="http://www.sosinterior.com/demos/blog/instyle/4.jpg"
-                    className={classes.image}
-                    alt="Haberler"
-                />
+                <Image src="/images/news/marieclaire/5/1.jpg" className={classes.image} alt="Haberler" />
             </Box>
             <Box className={classes.item}>
                 {/* <Text className={classes.title}>Haberler</Text> */}
