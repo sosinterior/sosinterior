@@ -242,7 +242,7 @@ const Header: FC<{ isBorder?: boolean }> = ({ isBorder = false }) => {
                     >
                         {t('contact')}
                     </Anchor>
-                    <Box className={router.asPath === '/contact' ? `${classes.link} active` : classes.link}>
+                    {/* <Box className={router.asPath === '/contact' ? `${classes.link} active` : classes.link}>
                         <Anchor
                             sx={{
                                 color: '#fff',
@@ -265,7 +265,7 @@ const Header: FC<{ isBorder?: boolean }> = ({ isBorder = false }) => {
                         >
                             EN
                         </Anchor>
-                    </Box>
+                    </Box> */}
                 </Group>
             </Container>
         </header>
