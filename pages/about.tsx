@@ -1,14 +1,13 @@
 import { NextPage } from 'next'
 
-import { Anchor, Box, Center, Container, createStyles, Divider, Grid, Image, Text } from '@mantine/core'
+import { Box, Center, Container, createStyles, Divider, Grid, Image, Text } from '@mantine/core'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import HeaderArea from '@/components/headerArea'
+import { useTranslation } from 'next-i18next'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import colors from '@/theme/colors'
-import Link from 'next/link'
-import { useTranslation } from 'next-i18next'
 
 const useStyles = createStyles(theme => ({
     title: {
