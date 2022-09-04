@@ -1,6 +1,6 @@
 import { FC, useCallback, useEffect, useState } from 'react'
 
-import { Anchor, Box, Burger, Container, createStyles, Group, Image } from '@mantine/core'
+import { Anchor, Burger, Container, createStyles, Group, Image } from '@mantine/core'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import colors from '@/theme/colors'
