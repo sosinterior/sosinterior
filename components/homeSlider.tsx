@@ -107,7 +107,7 @@ const HomeSlider = () => {
             if (type === 'next') {
                 return prev + 1 > 1 ? 0 : prev + 1
             } else {
-                return prev - 1 < 0 ? 2 : prev - 1
+                return prev - 1 < 0 ? 1 : prev - 1
             }
         })
 
