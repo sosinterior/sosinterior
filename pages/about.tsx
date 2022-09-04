@@ -220,21 +220,6 @@ const About: NextPage = () => {
                             </Grid.Col>
                             <Grid.Col className={`${classes.profileItem} ${classes.profileItemDescription}`} span={2}>
                                 <Text className={classes.description}>{t('about')}</Text>
-                                <Link
-                                    href="http://www.haberturk.com/yasam/haber/1300953-evlerde-sonbahar-detoksu"
-                                    passHref
-                                >
-                                    <Anchor className={classes.links}>{t('newspaper')}</Anchor>
-                                </Link>
-                                <Text className={classes.links} mx={5}>
-                                    |
-                                </Text>
-                                <Link
-                                    href="http://www.haberturk.com/yasam/haber/1300953-evlerde-sonbahar-detoksu"
-                                    passHref
-                                >
-                                    <Anchor className={classes.links}>Buseterim.com.tr</Anchor>
-                                </Link>
                             </Grid.Col>
                         </Grid>
                     </Container>
