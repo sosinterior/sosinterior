@@ -9,6 +9,10 @@ module.exports = {
   async rewrites() {
     return [
       {
+        source: '/index.html',
+        destination: '/'
+      },
+      {
         source: '/projects.html',
         destination: '/projects'
       },
@@ -23,6 +27,10 @@ module.exports = {
       {
         source: '/about-us.html',
         destination: '/about'
+      },
+      {
+        source: '/index-en.html',
+        destination: '/'
       },
       {
         source: '/projects-en.html',

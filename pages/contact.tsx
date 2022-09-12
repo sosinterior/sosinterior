@@ -158,7 +158,15 @@ const Contact: NextPage = () => {
     )
 }
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export const getServerSideProps = async ({ locale, req }: { locale: string; req: Request }) => {
+    if (req.url.includes('.html')) {
+        return {
+            redirect: {
+                destination: '/contact',
+                statusCode: 301,
+            },
+        }
+    }
     return {
         props: {
             ...(await serverSideTranslations(locale, ['contact', 'common'])),
