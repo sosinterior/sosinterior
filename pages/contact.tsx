@@ -68,6 +68,23 @@ const Contact: NextPage = () => {
     const { t } = useTranslation(['contact', 'common'])
     const { classes } = useStyles()
 
+    const onSubmit = () => {
+        let data = {
+            name: 'Mert',
+        }
+
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json, text/plain, */*',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        }).then(res => {
+            console.log(res)
+        })
+    }
+
     return (
         <>
             <Header />
@@ -96,6 +113,7 @@ const Contact: NextPage = () => {
                                 />
 
                                 <Button
+                                    onClick={onSubmit}
                                     color="dark"
                                     radius="xl"
                                     size="md"
