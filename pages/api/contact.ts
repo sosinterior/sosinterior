@@ -1,5 +1,5 @@
-export default function (req: Request) {
-    console.log(req.body)
+import { NextApiRequest, NextApiResponse } from 'next'
+export default function (req: NextApiRequest, res: NextApiResponse) {
     let nodemailer = require('nodemailer')
 
     const transporter = nodemailer.createTransport({
@@ -29,4 +29,8 @@ export default function (req: Request) {
             console.log(info)
         }
     })
+
+    console.log(req.body)
+
+    res.status(200).json({ name: 'Mert' })
 }

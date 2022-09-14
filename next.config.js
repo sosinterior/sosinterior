@@ -4,7 +4,7 @@ const { i18n } = require('./next-i18next.config');
 module.exports = {
   i18n,
   generateBuildId: async () => {
-    return '1.3.0'
+    return '1.4.0'
   },
   async rewrites() {
     return [
