@@ -81,7 +81,11 @@ const Contact: NextPage = () => {
             },
             body: JSON.stringify(data),
         }).then(res => {
+            console.log('Response received')
             console.log(res)
+            if (res.status === 200) {
+                console.log('Response succeeded!')
+            }
         })
     }
 
