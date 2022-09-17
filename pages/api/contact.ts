@@ -32,8 +32,8 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
 
                     const mailData = {
                         from: 'dev@sosinterior.com',
-                        // to: 'info@sosinterior.com',
-                        to: 'mertozyilmazz@gmail.com',
+                        to: 'info@sosinterior.com',
+                        // to: 'mertozyilmazz@gmail.com',
                         subject: `Message Fromtest`,
                         html: `<div>
                             Ad Soyad: ${data.name}<br />
