@@ -13,6 +13,18 @@ const AllNews: FC = () => {
         <Container size="xl" sx={{ marginTop: 100 }}>
             <Item
                 images={[
+                    '/images/news/instylehome/2/1.jpg',
+                    '/images/news/instylehome/2/2.jpg',
+                    '/images/news/instylehome/2/3.jpg',
+                    '/images/news/instylehome/2/4.jpg',
+                ]}
+                title="INSTYLE HOME"
+                subTitle={`${t('summer')}, 2022`}
+                itemIndex={15}
+            />
+
+            <Item
+                images={[
                     '/images/news/marieclaire/5/1.jpg',
                     '/images/news/marieclaire/5/2.jpg',
                     '/images/news/marieclaire/5/3.jpg',
@@ -24,6 +36,7 @@ const AllNews: FC = () => {
                 subTitle={`${t('september')} ${t('issue')}, 2022`}
                 itemIndex={14}
             />
+
             <Item
                 images={['/images/news/marieclaire/4/1.jpeg', '/images/news/marieclaire/4/2.jpg']}
                 title="MARIE CLAIRE MAISON"
@@ -55,7 +68,7 @@ const AllNews: FC = () => {
                     '/images/news/instylehome/1/5.jpg',
                     '/images/news/instylehome/1/6.jpg',
                 ]}
-                title="IN STYLE HOME"
+                title="INSTYLE HOME"
                 subTitle={`${t('spring')} ${t('issue')}, 2021`}
                 itemIndex={11}
             />

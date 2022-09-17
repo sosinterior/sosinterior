@@ -1,14 +1,29 @@
+import { SetStateAction, useCallback, useState } from 'react'
 import { NextPage } from 'next'
 
-import { Anchor, Box, Button, Container, createStyles, Input, List, Text, Textarea } from '@mantine/core'
+import {
+    Alert,
+    Anchor,
+    Box,
+    Button,
+    Container,
+    createStyles,
+    Input,
+    List,
+    LoadingOverlay,
+    Text,
+    Textarea,
+} from '@mantine/core'
+import { AlertCircle, BrandInstagram, Mail, MapPin } from 'tabler-icons-react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { BrandInstagram, Mail, MapPin } from 'tabler-icons-react'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 import HeaderArea from '@/components/headerArea'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import colors from '@/theme/colors'
 import Link from 'next/link'
+
 import { useTranslation } from 'next-i18next'
 
 const useStyles = createStyles(theme => ({
@@ -25,6 +40,7 @@ const useStyles = createStyles(theme => ({
         },
     },
     itemLeftInner: {
+        position: 'relative',
         [`@media (min-width: ${theme.breakpoints.md}px)`]: {
             paddingRight: 100,
         },
@@ -65,13 +81,57 @@ const useStyles = createStyles(theme => ({
 
 const Contact: NextPage = () => {
     // Hooks
+    const [systemMessage, setSystemMessage] = useState('')
+    const [systemTitle, setSystemTitle] = useState('')
+    const [systemColor, setSystemColor] = useState('')
+    const [loading, setLoading] = useState(false)
+    const [message, setMessage] = useState('')
+    const [email, setEmail] = useState('')
+    const [name, setName] = useState('')
+    // Hooks
     const { t } = useTranslation(['contact', 'common'])
+    const { executeRecaptcha } = useGoogleReCaptcha()
     const { classes } = useStyles()
 
-    const onSubmit = () => {
-        let data = {
-            name: 'Mert',
+    const resetStates = (isError: boolean) => {
+        setLoading(false)
+        if (!isError) {
+            setMessage('')
+            setEmail('')
+            setName('')
         }
+        setSystemMessage(
+            isError
+                ? 'Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyiniz.'
+                : 'Mesajınız başarıyla gönderilmiştir.',
+        )
+        setSystemTitle(isError ? 'İşlem Başarısız!' : 'İşlem Başarılı!')
+        setSystemColor(isError ? 'red' : 'green')
+
+        setTimeout(() => {
+            setSystemMessage('')
+            setSystemTitle('')
+            setSystemColor('')
+        }, 3500)
+    }
+
+    const onSubmit = useCallback(async () => {
+        if (!executeRecaptcha) {
+            console.log('Execute recaptcha not yet available')
+            return
+        }
+
+        executeRecaptcha('enquiryFormSubmit').then(gReCaptchaToken => {
+            const data = { message, email, name, gReCaptchaToken }
+            submitEnquiryForm(data)
+        })
+    }, [executeRecaptcha, name, email, message])
+
+    const submitEnquiryForm = (data: { message: string; email: string; name: string; gReCaptchaToken: string }) => {
+        setSystemMessage('')
+        setSystemTitle('')
+        setSystemColor('')
+        setLoading(true)
 
         fetch('/api/contact', {
             method: 'POST',
@@ -80,13 +140,19 @@ const Contact: NextPage = () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
-        }).then(res => {
-            console.log('Response received')
-            console.log(res)
-            if (res.status === 200) {
-                console.log('Response succeeded!')
-            }
         })
+            .then(res => res.json())
+            .then(res => {
+                if (res.status) {
+                    resetStates(false)
+                } else {
+                    resetStates(true)
+                }
+            })
+            .catch(err => {
+                resetStates(true)
+                console.log(err)
+            })
     }
 
     return (
@@ -104,15 +170,42 @@ const Contact: NextPage = () => {
                             <Text className={classes.title}>{t('contact', { ns: 'common' })}</Text>
 
                             <Box className={classes.itemLeftInner}>
+                                {(systemMessage || systemTitle) && (
+                                    <Alert
+                                        icon={<AlertCircle size={16} />}
+                                        title={systemTitle}
+                                        color={systemColor}
+                                        withCloseButton
+                                        mt={10}
+                                    >
+                                        {systemMessage}
+                                    </Alert>
+                                )}
+
+                                <LoadingOverlay visible={loading} />
                                 <Input
                                     sx={{ marginTop: 12, color: colors.antrazit }}
+                                    onChange={(e: { target: { value: SetStateAction<string> } }) =>
+                                        setName(e.target.value)
+                                    }
+                                    value={name}
                                     placeholder={t('name')}
                                     radius="md"
                                 />
-                                <Input placeholder="Email" radius="md" sx={{ marginTop: 12, color: colors.antrazit }} />
+                                <Input
+                                    onChange={(e: { target: { value: SetStateAction<string> } }) =>
+                                        setEmail(e.target.value)
+                                    }
+                                    placeholder="Email"
+                                    value={email}
+                                    radius="md"
+                                    sx={{ marginTop: 12, color: colors.antrazit }}
+                                />
                                 <Textarea
                                     sx={{ marginTop: 12, color: colors.antrazit }}
+                                    onChange={e => setMessage(e.target.value)}
                                     placeholder={t('message')}
+                                    value={message}
                                     radius="md"
                                 />
 
