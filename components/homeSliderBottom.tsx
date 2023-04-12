@@ -60,11 +60,7 @@ const HomeSliderBottom = () => {
                 <Box className={classes.body}>
                     {/* <Text className={classes.title}>{t('comment')}</Text> */}
                     <Box className={classes.content}>
-                        <Image
-                            alt="Serra Özbay"
-                            className={classes.img}
-                            src="http://www.sosinterior.com/images/portre.jpg"
-                        />
+                        <Image alt="Serra Özbay" className={classes.img} src="/images/portre.jpg" />
                         <Box sx={{ marginLeft: 12 }}>
                             <Text sx={{ fontSize: 18, color: '#fff' }}>Serra Özbay</Text>
                             <Text sx={{ fontSize: 14, color: '#fff', fontWeight: 200 }}>{t('foundingArchitect')}</Text>
