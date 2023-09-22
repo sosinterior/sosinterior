@@ -74,14 +74,14 @@ const HomeSlider = () => {
     const [activeSlider, setActiveSlider] = useState(0)
     const [images] = useState([
         {
-            image: '/images/slider/1.jpg',
-            title: t('slider1Title'),
-            content: t('slider1Content'),
-        },
-        {
             image: '/images/slider/2.jpg',
             title: t('slider2Title'),
             content: t('slider2Content'),
+        },
+        {
+            image: '/images/slider/1.jpg',
+            title: t('slider1Title'),
+            content: t('slider1Content'),
         },
     ])
     // Hooks
