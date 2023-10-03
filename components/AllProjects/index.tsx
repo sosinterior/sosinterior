@@ -92,6 +92,16 @@ const AllProjects: FC = () => {
                     '/images/projects/2/5.jpg',
                     '/images/projects/2/6.jpg',
                     '/images/projects/2/7.jpg',
+                    '/images/projects/2/8.jpg',
+                    '/images/projects/2/9.jpg',
+                    '/images/projects/2/10.jpg',
+                    '/images/projects/2/11.jpg',
+                    '/images/projects/2/12.jpg',
+                    '/images/projects/2/13.jpg',
+                    '/images/projects/2/14.jpg',
+                    '/images/projects/2/15.jpg',
+                    '/images/projects/2/16.jpg',
+                    '/images/projects/2/17.jpg',
                 ]}
             />
 
