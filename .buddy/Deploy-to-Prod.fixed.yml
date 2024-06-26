@@ -27,3 +27,4 @@
     - "# Restart Next.js App"
     - "NODE_ENV=PRODUCTION pm2 restart SosApp"
     - ""
+    shell: "BASH"
