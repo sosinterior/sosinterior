@@ -4,3 +4,11 @@
     refs:
     - "refs/heads/master"
   fail_on_prepare_env_warning: true
+  actions:
+  - action: "Transfer to sosinterior.com"
+    type: "SFTP"
+    remote_path: "/var/www/sosinterior.com"
+    login: "root"
+    host: "sosinterior.com"
+    env_key: "secure!sirGG9VlDse75pIN7tCljg==.sawaM+4suLM9eO9VkshJlg=="
+    authentication_mode: "ENV_KEY"
