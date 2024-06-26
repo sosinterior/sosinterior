@@ -1,0 +1,26 @@
+- pipeline: "Deploy to Prod"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/master"
+  fail_on_prepare_env_warning: true
+  actions:
+  - action: "Transfer to sosinterior.com"
+    type: "SFTP"
+    local_path: "/"
+    remote_path: "/var/www/sosinterior.com"
+    login: "root"
+    host: "sosinterior.com"
+    env_key: "secure!sirGG9VlDse75pIN7tCljg==.sawaM+4suLM9eO9VkshJlg=="
+    authentication_mode: "ENV_KEY"
+  - action: "NODE_ENV=PRODUCTION pm2 restart SosApp"
+    type: "BUILD"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "20.04"
+    execute_commands:
+    - "# Build"
+    - "NODE_ENV=PRODUCTION npm run build"
+    - ""
+    - "# Restart Next.js App"
+    - "NODE_ENV=PRODUCTION pm2 restart SosApp"
+    - ""
