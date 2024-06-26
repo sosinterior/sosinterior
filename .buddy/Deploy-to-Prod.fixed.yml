@@ -13,7 +13,7 @@
     host: "sosinterior.com"
     env_key: "secure!sirGG9VlDse75pIN7tCljg==.sawaM+4suLM9eO9VkshJlg=="
     authentication_mode: "ENV_KEY"
-  - action: "[sosinterior.com] Execute NODE_ENV=PRODUCTION pm2 restart SosApp"
+  - action: "[sosinterior.com] Execute"
     type: "SSH_COMMAND"
     working_directory: "/var/www/sosinterior.com"
     login: "root"
