@@ -15,6 +15,7 @@
     authentication_mode: "ENV_KEY"
   - action: "NODE_ENV=PRODUCTION pm2 restart SosApp"
     type: "BUILD"
+    disabled: true
     docker_image_name: "library/ubuntu"
     docker_image_tag: "20.04"
     execute_commands:
