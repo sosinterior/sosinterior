@@ -13,6 +13,20 @@ const AllNews: FC = () => {
         <Container size="xl" sx={{ marginTop: 100 }}>
             <Item
                 images={[
+                    '/images/news/mekan/4/1.jpg',
+                    '/images/news/mekan/4/2.jpg',
+                    '/images/news/mekan/4/3.jpg',
+                    '/images/news/mekan/4/4.jpg',
+                    '/images/news/mekan/4/5.jpg',
+                    '/images/news/mekan/4/6.jpg',
+                    '/images/news/mekan/4/7.jpg',
+                ]}
+                title="MEKAN"
+                subTitle={`${t('october')} ${t('issue')}, 2024`}
+                itemIndex={18}
+            />
+            <Item
+                images={[
                     '/images/news/maison/2/kapak.jpg',
                     '/images/news/maison/2/1.jpg',
                     '/images/news/maison/2/2.jpg',
