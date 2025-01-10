@@ -1,5 +1,5 @@
 import { Anchor, Box, Container, createStyles, Divider, Grid, Image, List, Text } from '@mantine/core'
-import { BrandInstagram, Mail, MapPin } from 'tabler-icons-react'
+import { BrandInstagram, Mail, MapPin, Phone } from 'tabler-icons-react'
 import Link from 'next/link'
 
 import { useTranslation } from 'next-i18next'
@@ -113,6 +113,22 @@ const Footer = () => {
                                         >
                                             <BrandInstagram />
                                             <Text sx={{ marginLeft: 5 }}>sosinterior</Text>
+                                        </Anchor>
+                                    </Link>
+                                </List.Item>
+                                <List.Item>
+                                    <Link passHref href="tel:02128070167">
+                                        <Anchor
+                                            sx={{
+                                                textDecoration: 'none !important',
+                                                alignItems: 'center',
+                                                display: 'flex',
+                                                marginTop: 20,
+                                                color: '#fff',
+                                            }}
+                                        >
+                                            <Phone />
+                                            <Text sx={{ marginLeft: 5 }}>0212 807 01 67</Text>
                                         </Anchor>
                                     </Link>
                                 </List.Item>
