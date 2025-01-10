@@ -14,7 +14,7 @@ import {
     Text,
     Textarea,
 } from '@mantine/core'
-import { AlertCircle, BrandInstagram, Mail, MapPin } from 'tabler-icons-react'
+import { AlertCircle, BrandInstagram, Mail, MapPin, Phone } from 'tabler-icons-react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
@@ -246,9 +246,25 @@ const Contact: NextPage = () => {
                                         </Text>
                                     </Text>
                                 </List.Item>
+                                <List.Item>
+                                    <Link passHref href="https://www.instagram.com/sosinterior">
+                                        <Anchor className={classes.contactItem} target="_blank">
+                                            <BrandInstagram size={30} strokeWidth={2} color="#fff" />
+                                            <Text sx={{ marginLeft: 5 }}>sosinterior</Text>
+                                        </Anchor>
+                                    </Link>
+                                </List.Item>
+                                <List.Item>
+                                    <Link passHref href="tel:02128070167">
+                                        <Anchor className={classes.contactItem} target="_blank">
+                                            <Phone size={30} strokeWidth={2} color="#fff" />
+                                            <Text sx={{ marginLeft: 5 }}>0212 807 01 67</Text>
+                                        </Anchor>
+                                    </Link>
+                                </List.Item>
                             </List>
 
-                            <Link passHref href="https://www.instagram.com/sosinterior">
+                            {/* <Link passHref href="https://www.instagram.com/sosinterior">
                                 <Anchor
                                     target="_blank"
                                     sx={{
@@ -263,7 +279,7 @@ const Contact: NextPage = () => {
                                     <BrandInstagram size={30} strokeWidth={2} color="#fff" />
                                     <Text sx={{ marginLeft: 5 }}>sosinterior</Text>
                                 </Anchor>
-                            </Link>
+                            </Link> */}
                         </Box>
                     </Box>
                 </Container>
