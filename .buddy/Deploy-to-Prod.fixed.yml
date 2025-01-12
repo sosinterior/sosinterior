@@ -1,33 +1,41 @@
-- pipeline: "Deploy to Prod"
+- pipeline: Deploy to Prod
   events:
-  - type: "PUSH"
+  - type: PUSH
     refs:
-    - "refs/heads/master"
+    - refs/heads/master
   fail_on_prepare_env_warning: true
   actions:
-  - action: "Transfer to sosinterior.com"
-    type: "SFTP"
-    local_path: "/"
-    remote_path: "/var/www/sosinterior.com"
-    login: "root"
-    host: "sosinterior.com"
-    env_key: "secure!sirGG9VlDse75pIN7tCljg==.sawaM+4suLM9eO9VkshJlg=="
-    authentication_mode: "ENV_KEY"
+  - action: Transfer to sosinterior.com
+    type: TRANSFER
+    local_path: /
+    targets:
+    - type: SSH
+      id: sosinterior_com
+      host: sosinterior.com
+      path: /var/www/sosinterior.com
+      auth:
+        method: ASSETS_KEY
+        username: root
+        asset: id_project
   - action: "[sosinterior.com] Execute"
-    type: "SSH_COMMAND"
-    working_directory: "/var/www/sosinterior.com"
-    login: "root"
-    host: "sosinterior.com"
-    env_key: "secure!sirGG9VlDse75pIN7tCljg==.sawaM+4suLM9eO9VkshJlg=="
-    authentication_mode: "ENV_KEY"
+    type: SSH_COMMAND
     commands:
     - "# Set Path"
-    - "export PATH=/root/.nvm/versions/node/v16.19.0/bin:$PATH;"
+    - export PATH=/root/.nvm/versions/node/v16.19.0/bin:$PATH;
     - ""
     - "# Build"
-    - "NODE_ENV=PRODUCTION npm run build"
+    - NODE_ENV=PRODUCTION npm run build
     - ""
     - "# Restart Next.js App"
-    - "NODE_ENV=PRODUCTION pm2 restart SosApp"
+    - NODE_ENV=PRODUCTION pm2 restart SosFrontend
+    targets:
+    - type: SSH
+      id: sosinterior_com
+      host: sosinterior.com
+      path: /var/www/sosinterior.com
+      auth:
+        method: ASSETS_KEY
+        username: root
+        asset: id_project
     run_as_script: true
-    shell: "SH"
+    shell: SH
