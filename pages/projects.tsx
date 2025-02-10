@@ -1,6 +1,8 @@
 import { NextPage } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
+import { useTranslation } from 'next-i18next'
+
 import AllProjects from '@/components/AllProjects'
 import HeaderArea from '@/components/headerArea'
 import Footer from '@/components/footer'
@@ -8,7 +10,6 @@ import Header from '@/components/header'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import '@fancyapps/ui/dist/fancybox.css'
-import { useTranslation } from 'next-i18next'
 
 const Projects: NextPage = () => {
     // Hooks
