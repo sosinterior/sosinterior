@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
+import React from 'react'
 
-import { Box, Button, createStyles, Grid, Image, Text, Container } from '@mantine/core'
+import { Box, Button, createStyles, Image, Text, Container } from '@mantine/core'
 import { ChevronLeft, ChevronRight } from 'tabler-icons-react'
 import { Carousel } from 'react-responsive-carousel'
 import { useTranslation } from 'next-i18next'
 
-import imageSize from '@/components/imageSize'
 import colors from '@/theme/colors'
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
