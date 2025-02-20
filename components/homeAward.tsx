@@ -30,7 +30,6 @@ const useStyles = createStyles(theme => ({
         },
     },
     image: {
-        backgroundColor: colors.antrazit,
         img: {
             height: '650px !important',
             width: '100%',
