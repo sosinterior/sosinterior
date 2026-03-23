@@ -12,6 +12,31 @@ const AllProjects: FC = () => {
     return (
         <Container size="xl" sx={{ marginTop: 100 }}>
             <Item
+                itemIndex={32}
+                data={{
+                    location: 'Kemerburgaz, İstanbul',
+                    name: `O.B ${t('house', { ns: 'common' })}`,
+                    size: '320',
+                    year: '2025',
+                }}
+                images={[
+                    '/images/projects/33/1.jpg',
+                    '/images/projects/33/2.jpg',
+                    '/images/projects/33/3.jpg',
+                    '/images/projects/33/4.jpg',
+                    '/images/projects/33/5.jpg',
+                    '/images/projects/33/6.jpg',
+                    '/images/projects/33/7.jpg',
+                    '/images/projects/33/8.jpg',
+                    '/images/projects/33/9.jpg',
+                    '/images/projects/33/10.jpg',
+                    '/images/projects/33/12.jpg',
+                    '/images/projects/33/13.jpg',
+                    '/images/projects/33/14.jpg',
+                ]}
+            />
+
+            <Item
                 itemIndex={31}
                 data={{
                     location: 'Amstelveen, The Netherlands',
