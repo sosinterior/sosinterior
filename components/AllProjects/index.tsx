@@ -20,17 +20,16 @@ const AllProjects: FC = () => {
                     year: '2025',
                 }}
                 images={[
+                    '/images/projects/33/4.jpg',
                     '/images/projects/33/1.jpg',
                     '/images/projects/33/2.jpg',
                     '/images/projects/33/3.jpg',
-                    '/images/projects/33/4.jpg',
                     '/images/projects/33/5.jpg',
                     '/images/projects/33/6.jpg',
                     '/images/projects/33/7.jpg',
                     '/images/projects/33/8.jpg',
                     '/images/projects/33/9.jpg',
                     '/images/projects/33/10.jpg',
-                    '/images/projects/33/12.jpg',
                     '/images/projects/33/13.jpg',
                     '/images/projects/33/14.jpg',
                 ]}
